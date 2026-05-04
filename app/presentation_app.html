@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JLR Predictive Maintenance Pilot</title>
+  <link rel="stylesheet" href="/presentation_app.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark"></div>
+        <div class="brand-copy">
+          <div>JLR predictive</div>
+          <div>maintenance pilot</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <button class="nav-link is-active" data-view="overview">Overview</button>
+        <button class="nav-link" data-view="machine-list">Machine view</button>
+        <button class="nav-link" data-view="try-it">Try it</button>
+        <button class="nav-link" data-view="how-it-works">How it works</button>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <section id="overview" class="view is-active"></section>
+      <section id="machine-list" class="view"></section>
+      <section id="machine-detail" class="view"></section>
+      <section id="try-it" class="view"></section>
+      <section id="how-it-works" class="view"></section>
+    </main>
+  </div>
+
+  <script src="/presentation_app.js"></script>
+</body>
+</html>

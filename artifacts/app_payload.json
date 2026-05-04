@@ -1,0 +1,4628 @@
+{
+  "overview": {
+    "plant": "JLR Plant 2, Solihull",
+    "title": "Predictive maintenance pilot",
+    "subtitle": "The model looks at sensor data from every machine on the line and flags the ones most likely to fail in the next shift. Engineers inspect those first, before anything breaks.",
+    "summary": {
+      "machinesMonitored": 30,
+      "flaggedToday": 13,
+      "highRisk": 7,
+      "downtimeAvoidedHours": 26
+    },
+    "topMachines": [
+      {
+        "machineId": "AURORA-CNC-04661",
+        "sourceIndex": 4661,
+        "type": "L",
+        "area": "BIW-North",
+        "station": "Trim Line A",
+        "probability": 0.8166666666666667,
+        "confidence": 0.8166666666666667,
+        "risk": "HIGH",
+        "internalRisk": "HIGH",
+        "inspectionFlag": true,
+        "recommendation": "Inspect before next shift",
+        "actualOutcome": 1,
+        "summary": "Hot air, Low speed",
+        "rank": 1,
+        "riskPercent": 82
+      },
+      {
+        "machineId": "AURORA-CNC-01391",
+        "sourceIndex": 1391,
+        "type": "L",
+        "area": "BIW-North",
+        "station": "Spot Weld 3",
+        "probability": 0.8033333333333333,
+        "confidence": 0.8033333333333333,
+        "risk": "HIGH",
+        "internalRisk": "HIGH",
+        "inspectionFlag": true,
+        "recommendation": "Inspect before next shift",
+        "actualOutcome": 1,
+        "summary": "Machine grade pattern",
+        "rank": 2,
+        "riskPercent": 80
+      },
+      {
+        "machineId": "AURORA-RBT-07997",
+        "sourceIndex": 7997,
+        "type": "M",
+        "area": "Paint-East",
+        "station": "Robot Cell 7",
+        "probability": 0.7866666666666666,
+        "confidence": 0.7866666666666666,
+        "risk": "HIGH",
+        "internalRisk": "HIGH",
+        "inspectionFlag": true,
+        "recommendation": "Inspect before next shift",
+        "actualOutcome": 1,
+        "summary": "General sensor drift",
+        "rank": 3,
+        "riskPercent": 79
+      },
+      {
+        "machineId": "AURORA-CNV-04081",
+        "sourceIndex": 4081,
+        "type": "L",
+        "area": "Assembly-S2",
+        "station": "Conveyor B",
+        "probability": 0.75,
+        "confidence": 0.75,
+        "risk": "HIGH",
+        "internalRisk": "HIGH",
+        "inspectionFlag": true,
+        "recommendation": "Inspect before next shift",
+        "actualOutcome": 1,
+        "summary": "Hot air, Low speed",
+        "rank": 4,
+        "riskPercent": 75
+      },
+      {
+        "machineId": "AURORA-CNC-04495",
+        "sourceIndex": 4495,
+        "type": "L",
+        "area": "BIW-North",
+        "station": "Mill Station 2",
+        "probability": 0.7366666666666667,
+        "confidence": 0.7366666666666667,
+        "risk": "HIGH",
+        "internalRisk": "HIGH",
+        "inspectionFlag": true,
+        "recommendation": "Inspect before next shift",
+        "actualOutcome": 1,
+        "summary": "Low speed, Hot air",
+        "rank": 5,
+        "riskPercent": 74
+      }
+    ]
+  },
+  "machines": {
+    "machines": [
+      {
+        "machineId": "AURORA-CNC-04661",
+        "sourceIndex": 4661,
+        "type": "L",
+        "area": "BIW-North",
+        "station": "Trim Line A",
+        "probability": 0.8166666666666667,
+        "confidence": 0.8166666666666667,
+        "risk": "HIGH",
+        "internalRisk": "HIGH",
+        "inspectionFlag": true,
+        "recommendation": "Inspect before next shift",
+        "actualOutcome": 1,
+        "summary": "Hot air, Low speed"
+      },
+      {
+        "machineId": "AURORA-CNC-01391",
+        "sourceIndex": 1391,
+        "type": "L",
+        "area": "BIW-North",
+        "station": "Spot Weld 3",
+        "probability": 0.8033333333333333,
+        "confidence": 0.8033333333333333,
+        "risk": "HIGH",
+        "internalRisk": "HIGH",
+        "inspectionFlag": true,
+        "recommendation": "Inspect before next shift",
+        "actualOutcome": 1,
+        "summary": "Machine grade pattern"
+      },
+      {
+        "machineId": "AURORA-RBT-07997",
+        "sourceIndex": 7997,
+        "type": "M",
+        "area": "Paint-East",
+        "station": "Robot Cell 7",
+        "probability": 0.7866666666666666,
+        "confidence": 0.7866666666666666,
+        "risk": "HIGH",
+        "internalRisk": "HIGH",
+        "inspectionFlag": true,
+        "recommendation": "Inspect before next shift",
+        "actualOutcome": 1,
+        "summary": "General sensor drift"
+      },
+      {
+        "machineId": "AURORA-CNV-04081",
+        "sourceIndex": 4081,
+        "type": "L",
+        "area": "Assembly-S2",
+        "station": "Conveyor B",
+        "probability": 0.75,
+        "confidence": 0.75,
+        "risk": "HIGH",
+        "internalRisk": "HIGH",
+        "inspectionFlag": true,
+        "recommendation": "Inspect before next shift",
+        "actualOutcome": 1,
+        "summary": "Hot air, Low speed"
+      },
+      {
+        "machineId": "AURORA-CNC-04495",
+        "sourceIndex": 4495,
+        "type": "L",
+        "area": "BIW-North",
+        "station": "Mill Station 2",
+        "probability": 0.7366666666666667,
+        "confidence": 0.7366666666666667,
+        "risk": "HIGH",
+        "internalRisk": "HIGH",
+        "inspectionFlag": true,
+        "recommendation": "Inspect before next shift",
+        "actualOutcome": 1,
+        "summary": "Low speed, Hot air"
+      },
+      {
+        "machineId": "AURORA-MTR-07011",
+        "sourceIndex": 7011,
+        "type": "L",
+        "area": "Drive Hall",
+        "station": "Drive Motor 4",
+        "probability": 0.73,
+        "confidence": 0.73,
+        "risk": "HIGH",
+        "internalRisk": "HIGH",
+        "inspectionFlag": true,
+        "recommendation": "Inspect before next shift",
+        "actualOutcome": 1,
+        "summary": "Machine grade pattern"
+      },
+      {
+        "machineId": "AURORA-CNC-04270",
+        "sourceIndex": 4270,
+        "type": "L",
+        "area": "Trim-West",
+        "station": "Trim Line C",
+        "probability": 0.7266666666666667,
+        "confidence": 0.7266666666666667,
+        "risk": "HIGH",
+        "internalRisk": "HIGH",
+        "inspectionFlag": true,
+        "recommendation": "Inspect before next shift",
+        "actualOutcome": 1,
+        "summary": "Hot air, Low speed"
+      },
+      {
+        "machineId": "AURORA-CNC-09664",
+        "sourceIndex": 9664,
+        "type": "L",
+        "area": "Machining",
+        "station": "Mill Station 5",
+        "probability": 0.69,
+        "confidence": 0.69,
+        "risk": "MEDIUM",
+        "internalRisk": "MEDIUM",
+        "inspectionFlag": true,
+        "recommendation": "Inspect during next planned window",
+        "actualOutcome": 1,
+        "summary": "High torque, Low speed"
+      },
+      {
+        "machineId": "AURORA-RBT-04179",
+        "sourceIndex": 4179,
+        "type": "L",
+        "area": "Paint-East",
+        "station": "Robot Cell 2",
+        "probability": 0.6533333333333333,
+        "confidence": 0.6533333333333333,
+        "risk": "MEDIUM",
+        "internalRisk": "MEDIUM",
+        "inspectionFlag": true,
+        "recommendation": "Inspect during next planned window",
+        "actualOutcome": 1,
+        "summary": "Low speed, Hot air"
+      },
+      {
+        "machineId": "AURORA-CNC-04544",
+        "sourceIndex": 4544,
+        "type": "L",
+        "area": "Drill Zone",
+        "station": "Drill Stn 1",
+        "probability": 0.63,
+        "confidence": 0.63,
+        "risk": "MEDIUM",
+        "internalRisk": "MEDIUM",
+        "inspectionFlag": true,
+        "recommendation": "Inspect during next planned window",
+        "actualOutcome": 1,
+        "summary": "Hot air, Low speed"
+      },
+      {
+        "machineId": "AURORA-MTR-04755",
+        "sourceIndex": 4755,
+        "type": "L",
+        "area": "Drive Hall",
+        "station": "Spindle 9",
+        "probability": 0.6266666666666667,
+        "confidence": 0.6266666666666667,
+        "risk": "MEDIUM",
+        "internalRisk": "MEDIUM",
+        "inspectionFlag": true,
+        "recommendation": "Inspect during next planned window",
+        "actualOutcome": 1,
+        "summary": "Hot air, Low speed"
+      },
+      {
+        "machineId": "AURORA-CNV-04427",
+        "sourceIndex": 4427,
+        "type": "M",
+        "area": "Assembly-S2",
+        "station": "Conveyor F",
+        "probability": 0.6233333333333333,
+        "confidence": 0.6233333333333333,
+        "risk": "MEDIUM",
+        "internalRisk": "MEDIUM",
+        "inspectionFlag": true,
+        "recommendation": "Inspect during next planned window",
+        "actualOutcome": 1,
+        "summary": "Hot air, Low speed"
+      },
+      {
+        "machineId": "AURORA-CNC-02444",
+        "sourceIndex": 2444,
+        "type": "L",
+        "area": "Trim-West",
+        "station": "Trim Line B",
+        "probability": 0.6233333333333333,
+        "confidence": 0.6233333333333333,
+        "risk": "MEDIUM",
+        "internalRisk": "MEDIUM",
+        "inspectionFlag": true,
+        "recommendation": "Inspect during next planned window",
+        "actualOutcome": 1,
+        "summary": "Low speed, High torque"
+      }
+    ]
+  },
+  "machineDetails": {
+    "AURORA-CNC-04661": {
+      "machineId": "AURORA-CNC-04661",
+      "sourceIndex": 4661,
+      "type": "L",
+      "area": "BIW-North",
+      "station": "Trim Line A",
+      "probability": 0.8166666666666667,
+      "confidence": 0.8166666666666667,
+      "risk": "HIGH",
+      "internalRisk": "HIGH",
+      "inspectionFlag": true,
+      "recommendation": "Inspect before next shift",
+      "actualOutcome": 1,
+      "summary": "Hot air, Low speed",
+      "predictionPercent": 82,
+      "sensorReadings": {
+        "Torque [Nm]": 48.1,
+        "Tool wear [min]": 32,
+        "Rotational speed [rpm]": 1350,
+        "Process temperature [K]": 311.3,
+        "Air temperature [K]": 303.3
+      },
+      "lime": [
+        {
+          "feature_rule": "Air temperature [K] > 0.75",
+          "featureKey": "Air temperature [K]",
+          "currentValueLabel": "Current value: 303.3 K",
+          "contribution": 0.06688963970755825
+        },
+        {
+          "feature_rule": "Rotational speed [rpm] <= -0.65",
+          "featureKey": "Rotational speed [rpm]",
+          "currentValueLabel": "Current value: 1350 rpm",
+          "contribution": 0.063130354157532
+        },
+        {
+          "feature_rule": "Torque [Nm] > 0.69",
+          "featureKey": "Torque [Nm]",
+          "currentValueLabel": "Current value: 48.1 Nm",
+          "contribution": 0.05001292894338842
+        },
+        {
+          "feature_rule": "Tool wear [min] <= -0.87",
+          "featureKey": "Tool wear [min]",
+          "currentValueLabel": "Current value: 32 min",
+          "contribution": -0.008516560260637997
+        },
+        {
+          "feature_rule": "0.00 < Type_L <= 1.00",
+          "featureKey": "Type",
+          "currentValueLabel": "Current grade: L",
+          "contribution": 0.005965699081106275
+        }
+      ]
+    },
+    "AURORA-CNC-01391": {
+      "machineId": "AURORA-CNC-01391",
+      "sourceIndex": 1391,
+      "type": "L",
+      "area": "BIW-North",
+      "station": "Spot Weld 3",
+      "probability": 0.8033333333333333,
+      "confidence": 0.8033333333333333,
+      "risk": "HIGH",
+      "internalRisk": "HIGH",
+      "inspectionFlag": true,
+      "recommendation": "Inspect before next shift",
+      "actualOutcome": 1,
+      "summary": "Machine grade pattern",
+      "predictionPercent": 80,
+      "sensorReadings": {
+        "Torque [Nm]": 8.8,
+        "Tool wear [min]": 142,
+        "Rotational speed [rpm]": 2737,
+        "Process temperature [K]": 310.2,
+        "Air temperature [K]": 298.9
+      },
+      "lime": [
+        {
+          "feature_rule": "-0.85 < Air temperature [K] <= 0.05",
+          "featureKey": "Air temperature [K]",
+          "currentValueLabel": "Current value: 298.9 K",
+          "contribution": -0.02081976823377156
+        },
+        {
+          "feature_rule": "Rotational speed [rpm] > 0.42",
+          "featureKey": "Rotational speed [rpm]",
+          "currentValueLabel": "Current value: 2737 rpm",
+          "contribution": -0.017742917084300678
+        },
+        {
+          "feature_rule": "Torque [Nm] <= -0.68",
+          "featureKey": "Torque [Nm]",
+          "currentValueLabel": "Current value: 8.8 Nm",
+          "contribution": -0.01159223477684651
+        },
+        {
+          "feature_rule": "-0.02 < Tool wear [min] <= 0.86",
+          "featureKey": "Tool wear [min]",
+          "currentValueLabel": "Current value: 142 min",
+          "contribution": -0.008508841652282604
+        },
+        {
+          "feature_rule": "0.00 < Type_L <= 1.00",
+          "featureKey": "Type",
+          "currentValueLabel": "Current grade: L",
+          "contribution": 0.007460198644597281
+        }
+      ]
+    },
+    "AURORA-RBT-07997": {
+      "machineId": "AURORA-RBT-07997",
+      "sourceIndex": 7997,
+      "type": "M",
+      "area": "Paint-East",
+      "station": "Robot Cell 7",
+      "probability": 0.7866666666666666,
+      "confidence": 0.7866666666666666,
+      "risk": "HIGH",
+      "internalRisk": "HIGH",
+      "inspectionFlag": true,
+      "recommendation": "Inspect before next shift",
+      "actualOutcome": 1,
+      "summary": "General sensor drift",
+      "predictionPercent": 79,
+      "sensorReadings": {
+        "Torque [Nm]": 9.7,
+        "Tool wear [min]": 143,
+        "Rotational speed [rpm]": 2710,
+        "Process temperature [K]": 312.2,
+        "Air temperature [K]": 301.0
+      },
+      "lime": [
+        {
+          "feature_rule": "Rotational speed [rpm] > 0.42",
+          "featureKey": "Rotational speed [rpm]",
+          "currentValueLabel": "Current value: 2710 rpm",
+          "contribution": -0.01587102275608008
+        },
+        {
+          "feature_rule": "0.05 < Air temperature [K] <= 0.75",
+          "featureKey": "Air temperature [K]",
+          "currentValueLabel": "Current value: 301.0 K",
+          "contribution": -0.015284380194909167
+        },
+        {
+          "feature_rule": "Torque [Nm] <= -0.68",
+          "featureKey": "Torque [Nm]",
+          "currentValueLabel": "Current value: 9.7 Nm",
+          "contribution": -0.014523259814030852
+        },
+        {
+          "feature_rule": "-0.02 < Tool wear [min] <= 0.86",
+          "featureKey": "Tool wear [min]",
+          "currentValueLabel": "Current value: 143 min",
+          "contribution": -0.01137195632355325
+        },
+        {
+          "feature_rule": "Process temperature [K] > 0.67",
+          "featureKey": "Process temperature [K]",
+          "currentValueLabel": "Current value: 312.2 K",
+          "contribution": -0.007572928559946844
+        }
+      ]
+    },
+    "AURORA-CNV-04081": {
+      "machineId": "AURORA-CNV-04081",
+      "sourceIndex": 4081,
+      "type": "L",
+      "area": "Assembly-S2",
+      "station": "Conveyor B",
+      "probability": 0.75,
+      "confidence": 0.75,
+      "risk": "HIGH",
+      "internalRisk": "HIGH",
+      "inspectionFlag": true,
+      "recommendation": "Inspect before next shift",
+      "actualOutcome": 1,
+      "summary": "Hot air, Low speed",
+      "predictionPercent": 75,
+      "sensorReadings": {
+        "Torque [Nm]": 58.2,
+        "Tool wear [min]": 110,
+        "Rotational speed [rpm]": 1336,
+        "Process temperature [K]": 310.4,
+        "Air temperature [K]": 302.0
+      },
+      "lime": [
+        {
+          "feature_rule": "Air temperature [K] > 0.75",
+          "featureKey": "Air temperature [K]",
+          "currentValueLabel": "Current value: 302.0 K",
+          "contribution": 0.06371918717743265
+        },
+        {
+          "feature_rule": "Rotational speed [rpm] <= -0.65",
+          "featureKey": "Rotational speed [rpm]",
+          "currentValueLabel": "Current value: 1336 rpm",
+          "contribution": 0.060376731940938295
+        },
+        {
+          "feature_rule": "Torque [Nm] > 0.69",
+          "featureKey": "Torque [Nm]",
+          "currentValueLabel": "Current value: 58.2 Nm",
+          "contribution": 0.045156646879591686
+        },
+        {
+          "feature_rule": "-0.02 < Tool wear [min] <= 0.86",
+          "featureKey": "Tool wear [min]",
+          "currentValueLabel": "Current value: 110 min",
+          "contribution": -0.012504377074413504
+        },
+        {
+          "feature_rule": "0.00 < Type_L <= 1.00",
+          "featureKey": "Type",
+          "currentValueLabel": "Current grade: L",
+          "contribution": 0.00433754496586885
+        }
+      ]
+    },
+    "AURORA-CNC-04495": {
+      "machineId": "AURORA-CNC-04495",
+      "sourceIndex": 4495,
+      "type": "L",
+      "area": "BIW-North",
+      "station": "Mill Station 2",
+      "probability": 0.7366666666666667,
+      "confidence": 0.7366666666666667,
+      "risk": "HIGH",
+      "internalRisk": "HIGH",
+      "inspectionFlag": true,
+      "recommendation": "Inspect before next shift",
+      "actualOutcome": 1,
+      "summary": "Low speed, Hot air",
+      "predictionPercent": 74,
+      "sensorReadings": {
+        "Torque [Nm]": 57.2,
+        "Tool wear [min]": 67,
+        "Rotational speed [rpm]": 1359,
+        "Process temperature [K]": 310.4,
+        "Air temperature [K]": 302.6
+      },
+      "lime": [
+        {
+          "feature_rule": "Rotational speed [rpm] <= -0.65",
+          "featureKey": "Rotational speed [rpm]",
+          "currentValueLabel": "Current value: 1359 rpm",
+          "contribution": 0.056702630277927796
+        },
+        {
+          "feature_rule": "Air temperature [K] > 0.75",
+          "featureKey": "Air temperature [K]",
+          "currentValueLabel": "Current value: 302.6 K",
+          "contribution": 0.05421705556929761
+        },
+        {
+          "feature_rule": "Torque [Nm] > 0.69",
+          "featureKey": "Torque [Nm]",
+          "currentValueLabel": "Current value: 57.2 Nm",
+          "contribution": 0.050855176786113274
+        },
+        {
+          "feature_rule": "-0.87 < Tool wear [min] <= -0.02",
+          "featureKey": "Tool wear [min]",
+          "currentValueLabel": "Current value: 67 min",
+          "contribution": -0.012087447996598761
+        },
+        {
+          "feature_rule": "0.06 < Process temperature [K] <= 0.67",
+          "featureKey": "Process temperature [K]",
+          "currentValueLabel": "Current value: 310.4 K",
+          "contribution": 0.005562168458649483
+        }
+      ]
+    },
+    "AURORA-MTR-07011": {
+      "machineId": "AURORA-MTR-07011",
+      "sourceIndex": 7011,
+      "type": "L",
+      "area": "Drive Hall",
+      "station": "Drive Motor 4",
+      "probability": 0.73,
+      "confidence": 0.73,
+      "risk": "HIGH",
+      "internalRisk": "HIGH",
+      "inspectionFlag": true,
+      "recommendation": "Inspect before next shift",
+      "actualOutcome": 1,
+      "summary": "Machine grade pattern",
+      "predictionPercent": 73,
+      "sensorReadings": {
+        "Torque [Nm]": 12.2,
+        "Tool wear [min]": 17,
+        "Rotational speed [rpm]": 2633,
+        "Process temperature [K]": 310.5,
+        "Air temperature [K]": 300.5
+      },
+      "lime": [
+        {
+          "feature_rule": "0.05 < Air temperature [K] <= 0.75",
+          "featureKey": "Air temperature [K]",
+          "currentValueLabel": "Current value: 300.5 K",
+          "contribution": -0.019480254170571303
+        },
+        {
+          "feature_rule": "Rotational speed [rpm] > 0.42",
+          "featureKey": "Rotational speed [rpm]",
+          "currentValueLabel": "Current value: 2633 rpm",
+          "contribution": -0.018365749030381004
+        },
+        {
+          "feature_rule": "Torque [Nm] <= -0.68",
+          "featureKey": "Torque [Nm]",
+          "currentValueLabel": "Current value: 12.2 Nm",
+          "contribution": -0.014191631007245869
+        },
+        {
+          "feature_rule": "Tool wear [min] <= -0.87",
+          "featureKey": "Tool wear [min]",
+          "currentValueLabel": "Current value: 17 min",
+          "contribution": -0.008016845319646177
+        },
+        {
+          "feature_rule": "0.00 < Type_L <= 1.00",
+          "featureKey": "Type",
+          "currentValueLabel": "Current grade: L",
+          "contribution": 0.003950705536074293
+        }
+      ]
+    },
+    "AURORA-CNC-04270": {
+      "machineId": "AURORA-CNC-04270",
+      "sourceIndex": 4270,
+      "type": "L",
+      "area": "Trim-West",
+      "station": "Trim Line C",
+      "probability": 0.7266666666666667,
+      "confidence": 0.7266666666666667,
+      "risk": "HIGH",
+      "internalRisk": "HIGH",
+      "inspectionFlag": true,
+      "recommendation": "Inspect before next shift",
+      "actualOutcome": 1,
+      "summary": "Hot air, Low speed",
+      "predictionPercent": 73,
+      "sensorReadings": {
+        "Torque [Nm]": 52.0,
+        "Tool wear [min]": 154,
+        "Rotational speed [rpm]": 1331,
+        "Process temperature [K]": 310.9,
+        "Air temperature [K]": 302.6
+      },
+      "lime": [
+        {
+          "feature_rule": "Air temperature [K] > 0.75",
+          "featureKey": "Air temperature [K]",
+          "currentValueLabel": "Current value: 302.6 K",
+          "contribution": 0.06470738069037826
+        },
+        {
+          "feature_rule": "Rotational speed [rpm] <= -0.65",
+          "featureKey": "Rotational speed [rpm]",
+          "currentValueLabel": "Current value: 1331 rpm",
+          "contribution": 0.055057114232423696
+        },
+        {
+          "feature_rule": "Torque [Nm] > 0.69",
+          "featureKey": "Torque [Nm]",
+          "currentValueLabel": "Current value: 52.0 Nm",
+          "contribution": 0.054066453384892146
+        },
+        {
+          "feature_rule": "-0.02 < Tool wear [min] <= 0.86",
+          "featureKey": "Tool wear [min]",
+          "currentValueLabel": "Current value: 154 min",
+          "contribution": -0.01566303635125828
+        },
+        {
+          "feature_rule": "Type_M <= 0.00",
+          "featureKey": "Type",
+          "currentValueLabel": "Current grade: L",
+          "contribution": 0.0043131156098708615
+        }
+      ]
+    },
+    "AURORA-CNC-09664": {
+      "machineId": "AURORA-CNC-09664",
+      "sourceIndex": 9664,
+      "type": "L",
+      "area": "Machining",
+      "station": "Mill Station 5",
+      "probability": 0.69,
+      "confidence": 0.69,
+      "risk": "MEDIUM",
+      "internalRisk": "MEDIUM",
+      "inspectionFlag": true,
+      "recommendation": "Inspect during next planned window",
+      "actualOutcome": 1,
+      "summary": "High torque, Low speed",
+      "predictionPercent": 69,
+      "sensorReadings": {
+        "Torque [Nm]": 54.8,
+        "Tool wear [min]": 231,
+        "Rotational speed [rpm]": 1317,
+        "Process temperature [K]": 310.2,
+        "Air temperature [K]": 299.1
+      },
+      "lime": [
+        {
+          "feature_rule": "Torque [Nm] > 0.69",
+          "featureKey": "Torque [Nm]",
+          "currentValueLabel": "Current value: 54.8 Nm",
+          "contribution": 0.05532858012224679
+        },
+        {
+          "feature_rule": "Rotational speed [rpm] <= -0.65",
+          "featureKey": "Rotational speed [rpm]",
+          "currentValueLabel": "Current value: 1317 rpm",
+          "contribution": 0.05490301883151627
+        },
+        {
+          "feature_rule": "Tool wear [min] > 0.86",
+          "featureKey": "Tool wear [min]",
+          "currentValueLabel": "Current value: 231 min",
+          "contribution": 0.040320341187345524
+        },
+        {
+          "feature_rule": "-0.85 < Air temperature [K] <= 0.05",
+          "featureKey": "Air temperature [K]",
+          "currentValueLabel": "Current value: 299.1 K",
+          "contribution": -0.017347994140369232
+        },
+        {
+          "feature_rule": "0.06 < Process temperature [K] <= 0.67",
+          "featureKey": "Process temperature [K]",
+          "currentValueLabel": "Current value: 310.2 K",
+          "contribution": 0.008540595299331584
+        }
+      ]
+    },
+    "AURORA-RBT-04179": {
+      "machineId": "AURORA-RBT-04179",
+      "sourceIndex": 4179,
+      "type": "L",
+      "area": "Paint-East",
+      "station": "Robot Cell 2",
+      "probability": 0.6533333333333333,
+      "confidence": 0.6533333333333333,
+      "risk": "MEDIUM",
+      "internalRisk": "MEDIUM",
+      "inspectionFlag": true,
+      "recommendation": "Inspect during next planned window",
+      "actualOutcome": 1,
+      "summary": "Low speed, Hot air",
+      "predictionPercent": 65,
+      "sensorReadings": {
+        "Torque [Nm]": 46.1,
+        "Tool wear [min]": 148,
+        "Rotational speed [rpm]": 1349,
+        "Process temperature [K]": 310.9,
+        "Air temperature [K]": 302.4
+      },
+      "lime": [
+        {
+          "feature_rule": "Rotational speed [rpm] <= -0.65",
+          "featureKey": "Rotational speed [rpm]",
+          "currentValueLabel": "Current value: 1349 rpm",
+          "contribution": 0.0669639213705351
+        },
+        {
+          "feature_rule": "Air temperature [K] > 0.75",
+          "featureKey": "Air temperature [K]",
+          "currentValueLabel": "Current value: 302.4 K",
+          "contribution": 0.06343099256290974
+        },
+        {
+          "feature_rule": "0.01 < Torque [Nm] <= 0.69",
+          "featureKey": "Torque [Nm]",
+          "currentValueLabel": "Current value: 46.1 Nm",
+          "contribution": -0.014365170991998544
+        },
+        {
+          "feature_rule": "-0.02 < Tool wear [min] <= 0.86",
+          "featureKey": "Tool wear [min]",
+          "currentValueLabel": "Current value: 148 min",
+          "contribution": -0.009849985622015073
+        },
+        {
+          "feature_rule": "0.06 < Process temperature [K] <= 0.67",
+          "featureKey": "Process temperature [K]",
+          "currentValueLabel": "Current value: 310.9 K",
+          "contribution": 0.007319547315203664
+        }
+      ]
+    },
+    "AURORA-CNC-04544": {
+      "machineId": "AURORA-CNC-04544",
+      "sourceIndex": 4544,
+      "type": "L",
+      "area": "Drill Zone",
+      "station": "Drill Stn 1",
+      "probability": 0.63,
+      "confidence": 0.63,
+      "risk": "MEDIUM",
+      "internalRisk": "MEDIUM",
+      "inspectionFlag": true,
+      "recommendation": "Inspect during next planned window",
+      "actualOutcome": 1,
+      "summary": "Hot air, Low speed",
+      "predictionPercent": 63,
+      "sensorReadings": {
+        "Torque [Nm]": 55.1,
+        "Tool wear [min]": 187,
+        "Rotational speed [rpm]": 1349,
+        "Process temperature [K]": 310.4,
+        "Air temperature [K]": 302.5
+      },
+      "lime": [
+        {
+          "feature_rule": "Air temperature [K] > 0.75",
+          "featureKey": "Air temperature [K]",
+          "currentValueLabel": "Current value: 302.5 K",
+          "contribution": 0.058909888453189854
+        },
+        {
+          "feature_rule": "Rotational speed [rpm] <= -0.65",
+          "featureKey": "Rotational speed [rpm]",
+          "currentValueLabel": "Current value: 1349 rpm",
+          "contribution": 0.056164764104240025
+        },
+        {
+          "feature_rule": "Torque [Nm] > 0.69",
+          "featureKey": "Torque [Nm]",
+          "currentValueLabel": "Current value: 55.1 Nm",
+          "contribution": 0.04840976719839604
+        },
+        {
+          "feature_rule": "Tool wear [min] > 0.86",
+          "featureKey": "Tool wear [min]",
+          "currentValueLabel": "Current value: 187 min",
+          "contribution": 0.028369183777773983
+        },
+        {
+          "feature_rule": "0.00 < Type_L <= 1.00",
+          "featureKey": "Type",
+          "currentValueLabel": "Current grade: L",
+          "contribution": 0.004796061520640877
+        }
+      ]
+    },
+    "AURORA-MTR-04755": {
+      "machineId": "AURORA-MTR-04755",
+      "sourceIndex": 4755,
+      "type": "L",
+      "area": "Drive Hall",
+      "station": "Spindle 9",
+      "probability": 0.6266666666666667,
+      "confidence": 0.6266666666666667,
+      "risk": "MEDIUM",
+      "internalRisk": "MEDIUM",
+      "inspectionFlag": true,
+      "recommendation": "Inspect during next planned window",
+      "actualOutcome": 1,
+      "summary": "Hot air, Low speed",
+      "predictionPercent": 63,
+      "sensorReadings": {
+        "Torque [Nm]": 51.3,
+        "Tool wear [min]": 51,
+        "Rotational speed [rpm]": 1295,
+        "Process temperature [K]": 311.7,
+        "Air temperature [K]": 303.4
+      },
+      "lime": [
+        {
+          "feature_rule": "Air temperature [K] > 0.75",
+          "featureKey": "Air temperature [K]",
+          "currentValueLabel": "Current value: 303.4 K",
+          "contribution": 0.06420777594282183
+        },
+        {
+          "feature_rule": "Rotational speed [rpm] <= -0.65",
+          "featureKey": "Rotational speed [rpm]",
+          "currentValueLabel": "Current value: 1295 rpm",
+          "contribution": 0.060526985095265
+        },
+        {
+          "feature_rule": "Torque [Nm] > 0.69",
+          "featureKey": "Torque [Nm]",
+          "currentValueLabel": "Current value: 51.3 Nm",
+          "contribution": 0.05178784688687943
+        },
+        {
+          "feature_rule": "Process temperature [K] > 0.67",
+          "featureKey": "Process temperature [K]",
+          "currentValueLabel": "Current value: 311.7 K",
+          "contribution": -0.01099663304429788
+        },
+        {
+          "feature_rule": "0.00 < Type_L <= 1.00",
+          "featureKey": "Type",
+          "currentValueLabel": "Current grade: L",
+          "contribution": 0.009898023609163122
+        }
+      ]
+    },
+    "AURORA-CNV-04427": {
+      "machineId": "AURORA-CNV-04427",
+      "sourceIndex": 4427,
+      "type": "M",
+      "area": "Assembly-S2",
+      "station": "Conveyor F",
+      "probability": 0.6233333333333333,
+      "confidence": 0.6233333333333333,
+      "risk": "MEDIUM",
+      "internalRisk": "MEDIUM",
+      "inspectionFlag": true,
+      "recommendation": "Inspect during next planned window",
+      "actualOutcome": 1,
+      "summary": "Hot air, Low speed",
+      "predictionPercent": 62,
+      "sensorReadings": {
+        "Torque [Nm]": 48.9,
+        "Tool wear [min]": 107,
+        "Rotational speed [rpm]": 1379,
+        "Process temperature [K]": 310.1,
+        "Air temperature [K]": 302.4
+      },
+      "lime": [
+        {
+          "feature_rule": "Air temperature [K] > 0.75",
+          "featureKey": "Air temperature [K]",
+          "currentValueLabel": "Current value: 302.4 K",
+          "contribution": 0.058215107019675895
+        },
+        {
+          "feature_rule": "Rotational speed [rpm] <= -0.65",
+          "featureKey": "Rotational speed [rpm]",
+          "currentValueLabel": "Current value: 1379 rpm",
+          "contribution": 0.057384438325713154
+        },
+        {
+          "feature_rule": "Torque [Nm] > 0.69",
+          "featureKey": "Torque [Nm]",
+          "currentValueLabel": "Current value: 48.9 Nm",
+          "contribution": 0.05300046023003752
+        },
+        {
+          "feature_rule": "-0.02 < Tool wear [min] <= 0.86",
+          "featureKey": "Tool wear [min]",
+          "currentValueLabel": "Current value: 107 min",
+          "contribution": -0.009706540891613642
+        },
+        {
+          "feature_rule": "Type_L <= 0.00",
+          "featureKey": "Type",
+          "currentValueLabel": "Current grade: M",
+          "contribution": -0.0051275271782123075
+        }
+      ]
+    },
+    "AURORA-CNC-02444": {
+      "machineId": "AURORA-CNC-02444",
+      "sourceIndex": 2444,
+      "type": "L",
+      "area": "Trim-West",
+      "station": "Trim Line B",
+      "probability": 0.6233333333333333,
+      "confidence": 0.6233333333333333,
+      "risk": "MEDIUM",
+      "internalRisk": "MEDIUM",
+      "inspectionFlag": true,
+      "recommendation": "Inspect during next planned window",
+      "actualOutcome": 1,
+      "summary": "Low speed, High torque",
+      "predictionPercent": 62,
+      "sensorReadings": {
+        "Torque [Nm]": 68.2,
+        "Tool wear [min]": 76,
+        "Rotational speed [rpm]": 1267,
+        "Process temperature [K]": 308.6,
+        "Air temperature [K]": 299.2
+      },
+      "lime": [
+        {
+          "feature_rule": "Rotational speed [rpm] <= -0.65",
+          "featureKey": "Rotational speed [rpm]",
+          "currentValueLabel": "Current value: 1267 rpm",
+          "contribution": 0.052929783578186874
+        },
+        {
+          "feature_rule": "Torque [Nm] > 0.69",
+          "featureKey": "Torque [Nm]",
+          "currentValueLabel": "Current value: 68.2 Nm",
+          "contribution": 0.04876091106872568
+        },
+        {
+          "feature_rule": "-0.85 < Air temperature [K] <= 0.05",
+          "featureKey": "Air temperature [K]",
+          "currentValueLabel": "Current value: 299.2 K",
+          "contribution": -0.020381148108957442
+        },
+        {
+          "feature_rule": "-0.87 < Tool wear [min] <= -0.02",
+          "featureKey": "Tool wear [min]",
+          "currentValueLabel": "Current value: 76 min",
+          "contribution": -0.011618978747176073
+        },
+        {
+          "feature_rule": "Process temperature [K] <= -0.82",
+          "featureKey": "Process temperature [K]",
+          "currentValueLabel": "Current value: 308.6 K",
+          "contribution": 0.006805230244930205
+        }
+      ]
+    },
+    "AURORA-RBT-07435": {
+      "machineId": "AURORA-RBT-07435",
+      "sourceIndex": 7435,
+      "type": "L",
+      "area": "Paint-East",
+      "station": "Robot Cell 5",
+      "probability": 0.0,
+      "confidence": 1.0,
+      "risk": "LOW",
+      "internalRisk": "LOW",
+      "inspectionFlag": false,
+      "recommendation": "Continue monitoring",
+      "actualOutcome": 0,
+      "summary": "Machine grade pattern",
+      "predictionPercent": 0,
+      "sensorReadings": {
+        "Torque [Nm]": 40.7,
+        "Tool wear [min]": 20,
+        "Rotational speed [rpm]": 1504,
+        "Process temperature [K]": 311.3,
+        "Air temperature [K]": 299.9
+      },
+      "lime": [
+        {
+          "feature_rule": "-0.20 < Rotational speed [rpm] <= 0.42",
+          "featureKey": "Rotational speed [rpm]",
+          "currentValueLabel": "Current value: 1504 rpm",
+          "contribution": -0.019425642342704812
+        },
+        {
+          "feature_rule": "-0.85 < Air temperature [K] <= 0.05",
+          "featureKey": "Air temperature [K]",
+          "currentValueLabel": "Current value: 299.9 K",
+          "contribution": -0.018170130167959462
+        },
+        {
+          "feature_rule": "0.01 < Torque [Nm] <= 0.69",
+          "featureKey": "Torque [Nm]",
+          "currentValueLabel": "Current value: 40.7 Nm",
+          "contribution": -0.016952588661408686
+        },
+        {
+          "feature_rule": "Process temperature [K] > 0.67",
+          "featureKey": "Process temperature [K]",
+          "currentValueLabel": "Current value: 311.3 K",
+          "contribution": -0.005135198935194477
+        },
+        {
+          "feature_rule": "0.00 < Type_L <= 1.00",
+          "featureKey": "Type",
+          "currentValueLabel": "Current grade: L",
+          "contribution": 0.004869369106111474
+        }
+      ]
+    },
+    "AURORA-CNC-04176": {
+      "machineId": "AURORA-CNC-04176",
+      "sourceIndex": 4176,
+      "type": "M",
+      "area": "Machining",
+      "station": "Mill Station 1",
+      "probability": 0.0,
+      "confidence": 1.0,
+      "risk": "LOW",
+      "internalRisk": "LOW",
+      "inspectionFlag": false,
+      "recommendation": "Continue monitoring",
+      "actualOutcome": 0,
+      "summary": "Hot air",
+      "predictionPercent": 0,
+      "sensorReadings": {
+        "Torque [Nm]": 39.7,
+        "Tool wear [min]": 141,
+        "Rotational speed [rpm]": 1544,
+        "Process temperature [K]": 310.7,
+        "Air temperature [K]": 302.3
+      },
+      "lime": [
+        {
+          "feature_rule": "Air temperature [K] > 0.75",
+          "featureKey": "Air temperature [K]",
+          "currentValueLabel": "Current value: 302.3 K",
+          "contribution": 0.06025408950000626
+        },
+        {
+          "feature_rule": "-0.68 < Torque [Nm] <= 0.01",
+          "featureKey": "Torque [Nm]",
+          "currentValueLabel": "Current value: 39.7 Nm",
+          "contribution": -0.021923395044276487
+        },
+        {
+          "feature_rule": "-0.20 < Rotational speed [rpm] <= 0.42",
+          "featureKey": "Rotational speed [rpm]",
+          "currentValueLabel": "Current value: 1544 rpm",
+          "contribution": -0.021403085331552305
+        },
+        {
+          "feature_rule": "-0.02 < Tool wear [min] <= 0.86",
+          "featureKey": "Tool wear [min]",
+          "currentValueLabel": "Current value: 141 min",
+          "contribution": -0.012408590684247135
+        },
+        {
+          "feature_rule": "Type_L <= 0.00",
+          "featureKey": "Type",
+          "currentValueLabel": "Current grade: M",
+          "contribution": -0.00945790807322977
+        }
+      ]
+    },
+    "AURORA-CNC-08671": {
+      "machineId": "AURORA-CNC-08671",
+      "sourceIndex": 8671,
+      "type": "L",
+      "area": "BIW-North",
+      "station": "Trim Line A",
+      "probability": 0.0,
+      "confidence": 1.0,
+      "risk": "LOW",
+      "internalRisk": "LOW",
+      "inspectionFlag": false,
+      "recommendation": "Continue monitoring",
+      "actualOutcome": 0,
+      "summary": "Machine grade pattern",
+      "predictionPercent": 0,
+      "sensorReadings": {
+        "Torque [Nm]": 37.8,
+        "Tool wear [min]": 157,
+        "Rotational speed [rpm]": 1530,
+        "Process temperature [K]": 308.8,
+        "Air temperature [K]": 297.5
+      },
+      "lime": [
+        {
+          "feature_rule": "Air temperature [K] <= -0.85",
+          "featureKey": "Air temperature [K]",
+          "currentValueLabel": "Current value: 297.5 K",
+          "contribution": -0.022780686945477812
+        },
+        {
+          "feature_rule": "-0.68 < Torque [Nm] <= 0.01",
+          "featureKey": "Torque [Nm]",
+          "currentValueLabel": "Current value: 37.8 Nm",
+          "contribution": -0.021363017355254036
+        },
+        {
+          "feature_rule": "-0.20 < Rotational speed [rpm] <= 0.42",
+          "featureKey": "Rotational speed [rpm]",
+          "currentValueLabel": "Current value: 1530 rpm",
+          "contribution": -0.0196983798099933
+        },
+        {
+          "feature_rule": "-0.02 < Tool wear [min] <= 0.86",
+          "featureKey": "Tool wear [min]",
+          "currentValueLabel": "Current value: 157 min",
+          "contribution": -0.00719390015178121
+        },
+        {
+          "feature_rule": "0.00 < Type_L <= 1.00",
+          "featureKey": "Type",
+          "currentValueLabel": "Current grade: L",
+          "contribution": 0.005421070781143279
+        }
+      ]
+    },
+    "AURORA-CNC-03085": {
+      "machineId": "AURORA-CNC-03085",
+      "sourceIndex": 3085,
+      "type": "L",
+      "area": "BIW-North",
+      "station": "Spot Weld 3",
+      "probability": 0.0,
+      "confidence": 1.0,
+      "risk": "LOW",
+      "internalRisk": "LOW",
+      "inspectionFlag": false,
+      "recommendation": "Continue monitoring",
+      "actualOutcome": 0,
+      "summary": "Machine grade pattern",
+      "predictionPercent": 0,
+      "sensorReadings": {
+        "Torque [Nm]": 42.9,
+        "Tool wear [min]": 148,
+        "Rotational speed [rpm]": 1441,
+        "Process temperature [K]": 309.2,
+        "Air temperature [K]": 300.1
+      },
+      "lime": [
+        {
+          "feature_rule": "-0.85 < Air temperature [K] <= 0.05",
+          "featureKey": "Air temperature [K]",
+          "currentValueLabel": "Current value: 300.1 K",
+          "contribution": -0.01756283655278667
+        },
+        {
+          "feature_rule": "-0.65 < Rotational speed [rpm] <= -0.20",
+          "featureKey": "Rotational speed [rpm]",
+          "currentValueLabel": "Current value: 1441 rpm",
+          "contribution": -0.016242873681631072
+        },
+        {
+          "feature_rule": "-0.02 < Tool wear [min] <= 0.86",
+          "featureKey": "Tool wear [min]",
+          "currentValueLabel": "Current value: 148 min",
+          "contribution": -0.014358322775880962
+        },
+        {
+          "feature_rule": "0.01 < Torque [Nm] <= 0.69",
+          "featureKey": "Torque [Nm]",
+          "currentValueLabel": "Current value: 42.9 Nm",
+          "contribution": -0.007570355601501079
+        },
+        {
+          "feature_rule": "0.00 < Type_L <= 1.00",
+          "featureKey": "Type",
+          "currentValueLabel": "Current grade: L",
+          "contribution": 0.005420155762167824
+        }
+      ]
+    },
+    "AURORA-RBT-01089": {
+      "machineId": "AURORA-RBT-01089",
+      "sourceIndex": 1089,
+      "type": "M",
+      "area": "Paint-East",
+      "station": "Robot Cell 7",
+      "probability": 0.0,
+      "confidence": 1.0,
+      "risk": "LOW",
+      "internalRisk": "LOW",
+      "inspectionFlag": false,
+      "recommendation": "Continue monitoring",
+      "actualOutcome": 0,
+      "summary": "Running hot",
+      "predictionPercent": 0,
+      "sensorReadings": {
+        "Torque [Nm]": 17.5,
+        "Tool wear [min]": 3,
+        "Rotational speed [rpm]": 2008,
+        "Process temperature [K]": 307.7,
+        "Air temperature [K]": 296.9
+      },
+      "lime": [
+        {
+          "feature_rule": "Air temperature [K] <= -0.85",
+          "featureKey": "Air temperature [K]",
+          "currentValueLabel": "Current value: 296.9 K",
+          "contribution": -0.024359373414562197
+        },
+        {
+          "feature_rule": "Rotational speed [rpm] > 0.42",
+          "featureKey": "Rotational speed [rpm]",
+          "currentValueLabel": "Current value: 2008 rpm",
+          "contribution": -0.01870813276931991
+        },
+        {
+          "feature_rule": "Torque [Nm] <= -0.68",
+          "featureKey": "Torque [Nm]",
+          "currentValueLabel": "Current value: 17.5 Nm",
+          "contribution": -0.017791012422249036
+        },
+        {
+          "feature_rule": "Type_L <= 0.00",
+          "featureKey": "Type",
+          "currentValueLabel": "Current grade: M",
+          "contribution": -0.009756408059690113
+        },
+        {
+          "feature_rule": "Process temperature [K] <= -0.82",
+          "featureKey": "Process temperature [K]",
+          "currentValueLabel": "Current value: 307.7 K",
+          "contribution": 0.0075088312838445855
+        }
+      ]
+    },
+    "AURORA-CNV-03346": {
+      "machineId": "AURORA-CNV-03346",
+      "sourceIndex": 3346,
+      "type": "L",
+      "area": "Assembly-S2",
+      "station": "Conveyor B",
+      "probability": 0.0,
+      "confidence": 1.0,
+      "risk": "LOW",
+      "internalRisk": "LOW",
+      "inspectionFlag": false,
+      "recommendation": "Continue monitoring",
+      "actualOutcome": 0,
+      "summary": "Worn tool, Machine grade pattern",
+      "predictionPercent": 0,
+      "sensorReadings": {
+        "Torque [Nm]": 24.3,
+        "Tool wear [min]": 174,
+        "Rotational speed [rpm]": 1761,
+        "Process temperature [K]": 310.7,
+        "Air temperature [K]": 301.3
+      },
+      "lime": [
+        {
+          "feature_rule": "Tool wear [min] > 0.86",
+          "featureKey": "Tool wear [min]",
+          "currentValueLabel": "Current value: 174 min",
+          "contribution": 0.03122294998610502
+        },
+        {
+          "feature_rule": "Torque [Nm] <= -0.68",
+          "featureKey": "Torque [Nm]",
+          "currentValueLabel": "Current value: 24.3 Nm",
+          "contribution": -0.019382682072856115
+        },
+        {
+          "feature_rule": "0.05 < Air temperature [K] <= 0.75",
+          "featureKey": "Air temperature [K]",
+          "currentValueLabel": "Current value: 301.3 K",
+          "contribution": -0.019292250582793262
+        },
+        {
+          "feature_rule": "Rotational speed [rpm] > 0.42",
+          "featureKey": "Rotational speed [rpm]",
+          "currentValueLabel": "Current value: 1761 rpm",
+          "contribution": -0.017562869667139498
+        },
+        {
+          "feature_rule": "0.00 < Type_L <= 1.00",
+          "featureKey": "Type",
+          "currentValueLabel": "Current grade: L",
+          "contribution": 0.009506427395130763
+        }
+      ]
+    },
+    "AURORA-CNC-01853": {
+      "machineId": "AURORA-CNC-01853",
+      "sourceIndex": 1853,
+      "type": "L",
+      "area": "BIW-North",
+      "station": "Mill Station 2",
+      "probability": 0.0,
+      "confidence": 1.0,
+      "risk": "LOW",
+      "internalRisk": "LOW",
+      "inspectionFlag": false,
+      "recommendation": "Continue monitoring",
+      "actualOutcome": 0,
+      "summary": "Machine grade pattern",
+      "predictionPercent": 0,
+      "sensorReadings": {
+        "Torque [Nm]": 40.6,
+        "Tool wear [min]": 42,
+        "Rotational speed [rpm]": 1486,
+        "Process temperature [K]": 307.2,
+        "Air temperature [K]": 297.6
+      },
+      "lime": [
+        {
+          "feature_rule": "-0.65 < Rotational speed [rpm] <= -0.20",
+          "featureKey": "Rotational speed [rpm]",
+          "currentValueLabel": "Current value: 1486 rpm",
+          "contribution": -0.018267434052558287
+        },
+        {
+          "feature_rule": "Air temperature [K] <= -0.85",
+          "featureKey": "Air temperature [K]",
+          "currentValueLabel": "Current value: 297.6 K",
+          "contribution": -0.017840853185842807
+        },
+        {
+          "feature_rule": "0.01 < Torque [Nm] <= 0.69",
+          "featureKey": "Torque [Nm]",
+          "currentValueLabel": "Current value: 40.6 Nm",
+          "contribution": -0.01431305494898486
+        },
+        {
+          "feature_rule": "Tool wear [min] <= -0.87",
+          "featureKey": "Tool wear [min]",
+          "currentValueLabel": "Current value: 42 min",
+          "contribution": -0.007640666629716361
+        },
+        {
+          "feature_rule": "0.00 < Type_L <= 1.00",
+          "featureKey": "Type",
+          "currentValueLabel": "Current grade: L",
+          "contribution": 0.00581239900877981
+        }
+      ]
+    },
+    "AURORA-MTR-00684": {
+      "machineId": "AURORA-MTR-00684",
+      "sourceIndex": 684,
+      "type": "L",
+      "area": "Drive Hall",
+      "station": "Drive Motor 4",
+      "probability": 0.0,
+      "confidence": 1.0,
+      "risk": "LOW",
+      "internalRisk": "LOW",
+      "inspectionFlag": false,
+      "recommendation": "Continue monitoring",
+      "actualOutcome": 0,
+      "summary": "Machine grade pattern",
+      "predictionPercent": 0,
+      "sensorReadings": {
+        "Torque [Nm]": 43.2,
+        "Tool wear [min]": 30,
+        "Rotational speed [rpm]": 1538,
+        "Process temperature [K]": 309.0,
+        "Air temperature [K]": 297.7
+      },
+      "lime": [
+        {
+          "feature_rule": "Air temperature [K] <= -0.85",
+          "featureKey": "Air temperature [K]",
+          "currentValueLabel": "Current value: 297.7 K",
+          "contribution": -0.024490998920078257
+        },
+        {
+          "feature_rule": "-0.20 < Rotational speed [rpm] <= 0.42",
+          "featureKey": "Rotational speed [rpm]",
+          "currentValueLabel": "Current value: 1538 rpm",
+          "contribution": -0.018386205740968074
+        },
+        {
+          "feature_rule": "0.01 < Torque [Nm] <= 0.69",
+          "featureKey": "Torque [Nm]",
+          "currentValueLabel": "Current value: 43.2 Nm",
+          "contribution": -0.014992864437903328
+        },
+        {
+          "feature_rule": "Tool wear [min] <= -0.87",
+          "featureKey": "Tool wear [min]",
+          "currentValueLabel": "Current value: 30 min",
+          "contribution": -0.010359932244614829
+        },
+        {
+          "feature_rule": "0.00 < Type_L <= 1.00",
+          "featureKey": "Type",
+          "currentValueLabel": "Current grade: L",
+          "contribution": 0.006508415976375074
+        }
+      ]
+    },
+    "AURORA-CNC-05313": {
+      "machineId": "AURORA-CNC-05313",
+      "sourceIndex": 5313,
+      "type": "M",
+      "area": "Trim-West",
+      "station": "Trim Line C",
+      "probability": 0.0,
+      "confidence": 1.0,
+      "risk": "LOW",
+      "internalRisk": "LOW",
+      "inspectionFlag": false,
+      "recommendation": "Continue monitoring",
+      "actualOutcome": 0,
+      "summary": "Hot air",
+      "predictionPercent": 0,
+      "sensorReadings": {
+        "Torque [Nm]": 32.6,
+        "Tool wear [min]": 9,
+        "Rotational speed [rpm]": 1566,
+        "Process temperature [K]": 312.9,
+        "Air temperature [K]": 303.7
+      },
+      "lime": [
+        {
+          "feature_rule": "Air temperature [K] > 0.75",
+          "featureKey": "Air temperature [K]",
+          "currentValueLabel": "Current value: 303.7 K",
+          "contribution": 0.04998947556868932
+        },
+        {
+          "feature_rule": "-0.20 < Rotational speed [rpm] <= 0.42",
+          "featureKey": "Rotational speed [rpm]",
+          "currentValueLabel": "Current value: 1566 rpm",
+          "contribution": -0.020258519921291507
+        },
+        {
+          "feature_rule": "Torque [Nm] <= -0.68",
+          "featureKey": "Torque [Nm]",
+          "currentValueLabel": "Current value: 32.6 Nm",
+          "contribution": -0.019030536613502853
+        },
+        {
+          "feature_rule": "Tool wear [min] <= -0.87",
+          "featureKey": "Tool wear [min]",
+          "currentValueLabel": "Current value: 9 min",
+          "contribution": -0.011856783201102821
+        },
+        {
+          "feature_rule": "Process temperature [K] > 0.67",
+          "featureKey": "Process temperature [K]",
+          "currentValueLabel": "Current value: 312.9 K",
+          "contribution": -0.007216543625392693
+        }
+      ]
+    },
+    "AURORA-CNC-00281": {
+      "machineId": "AURORA-CNC-00281",
+      "sourceIndex": 281,
+      "type": "L",
+      "area": "Machining",
+      "station": "Mill Station 5",
+      "probability": 0.0,
+      "confidence": 1.0,
+      "risk": "LOW",
+      "internalRisk": "LOW",
+      "inspectionFlag": false,
+      "recommendation": "Continue monitoring",
+      "actualOutcome": 0,
+      "summary": "Running hot",
+      "predictionPercent": 0,
+      "sensorReadings": {
+        "Torque [Nm]": 36.5,
+        "Tool wear [min]": 83,
+        "Rotational speed [rpm]": 1626,
+        "Process temperature [K]": 308.0,
+        "Air temperature [K]": 298.1
+      },
+      "lime": [
+        {
+          "feature_rule": "-0.68 < Torque [Nm] <= 0.01",
+          "featureKey": "Torque [Nm]",
+          "currentValueLabel": "Current value: 36.5 Nm",
+          "contribution": -0.0212362680975433
+        },
+        {
+          "feature_rule": "Rotational speed [rpm] > 0.42",
+          "featureKey": "Rotational speed [rpm]",
+          "currentValueLabel": "Current value: 1626 rpm",
+          "contribution": -0.018523161141449113
+        },
+        {
+          "feature_rule": "Air temperature [K] <= -0.85",
+          "featureKey": "Air temperature [K]",
+          "currentValueLabel": "Current value: 298.1 K",
+          "contribution": -0.015826729530641927
+        },
+        {
+          "feature_rule": "-0.87 < Tool wear [min] <= -0.02",
+          "featureKey": "Tool wear [min]",
+          "currentValueLabel": "Current value: 83 min",
+          "contribution": -0.011553049033029304
+        },
+        {
+          "feature_rule": "Process temperature [K] <= -0.82",
+          "featureKey": "Process temperature [K]",
+          "currentValueLabel": "Current value: 308.0 K",
+          "contribution": 0.009023363113116748
+        }
+      ]
+    },
+    "AURORA-RBT-08269": {
+      "machineId": "AURORA-RBT-08269",
+      "sourceIndex": 8269,
+      "type": "H",
+      "area": "Paint-East",
+      "station": "Robot Cell 2",
+      "probability": 0.0,
+      "confidence": 1.0,
+      "risk": "LOW",
+      "internalRisk": "LOW",
+      "inspectionFlag": false,
+      "recommendation": "Continue monitoring",
+      "actualOutcome": 0,
+      "summary": "Worn tool, Running hot",
+      "predictionPercent": 0,
+      "sensorReadings": {
+        "Torque [Nm]": 30.4,
+        "Tool wear [min]": 180,
+        "Rotational speed [rpm]": 1761,
+        "Process temperature [K]": 310.8,
+        "Air temperature [K]": 299.2
+      },
+      "lime": [
+        {
+          "feature_rule": "Tool wear [min] > 0.86",
+          "featureKey": "Tool wear [min]",
+          "currentValueLabel": "Current value: 180 min",
+          "contribution": 0.029378246067799
+        },
+        {
+          "feature_rule": "-0.85 < Air temperature [K] <= 0.05",
+          "featureKey": "Air temperature [K]",
+          "currentValueLabel": "Current value: 299.2 K",
+          "contribution": -0.02086518605877278
+        },
+        {
+          "feature_rule": "Torque [Nm] <= -0.68",
+          "featureKey": "Torque [Nm]",
+          "currentValueLabel": "Current value: 30.4 Nm",
+          "contribution": -0.019837911862447568
+        },
+        {
+          "feature_rule": "Rotational speed [rpm] > 0.42",
+          "featureKey": "Rotational speed [rpm]",
+          "currentValueLabel": "Current value: 1761 rpm",
+          "contribution": -0.018769074967134123
+        },
+        {
+          "feature_rule": "0.06 < Process temperature [K] <= 0.67",
+          "featureKey": "Process temperature [K]",
+          "currentValueLabel": "Current value: 310.8 K",
+          "contribution": 0.006303573063823181
+        }
+      ]
+    },
+    "AURORA-CNC-08625": {
+      "machineId": "AURORA-CNC-08625",
+      "sourceIndex": 8625,
+      "type": "L",
+      "area": "Drill Zone",
+      "station": "Drill Stn 1",
+      "probability": 0.0,
+      "confidence": 1.0,
+      "risk": "LOW",
+      "internalRisk": "LOW",
+      "inspectionFlag": false,
+      "recommendation": "Continue monitoring",
+      "actualOutcome": 0,
+      "summary": "Running hot",
+      "predictionPercent": 0,
+      "sensorReadings": {
+        "Torque [Nm]": 33.5,
+        "Tool wear [min]": 39,
+        "Rotational speed [rpm]": 1632,
+        "Process temperature [K]": 308.3,
+        "Air temperature [K]": 297.4
+      },
+      "lime": [
+        {
+          "feature_rule": "-0.68 < Torque [Nm] <= 0.01",
+          "featureKey": "Torque [Nm]",
+          "currentValueLabel": "Current value: 33.5 Nm",
+          "contribution": -0.021199193398815326
+        },
+        {
+          "feature_rule": "Air temperature [K] <= -0.85",
+          "featureKey": "Air temperature [K]",
+          "currentValueLabel": "Current value: 297.4 K",
+          "contribution": -0.01971376586664605
+        },
+        {
+          "feature_rule": "Rotational speed [rpm] > 0.42",
+          "featureKey": "Rotational speed [rpm]",
+          "currentValueLabel": "Current value: 1632 rpm",
+          "contribution": -0.015014357667818903
+        },
+        {
+          "feature_rule": "Process temperature [K] <= -0.82",
+          "featureKey": "Process temperature [K]",
+          "currentValueLabel": "Current value: 308.3 K",
+          "contribution": 0.007768385939827065
+        },
+        {
+          "feature_rule": "Tool wear [min] <= -0.87",
+          "featureKey": "Tool wear [min]",
+          "currentValueLabel": "Current value: 39 min",
+          "contribution": -0.007503114176002772
+        }
+      ]
+    },
+    "AURORA-MTR-00568": {
+      "machineId": "AURORA-MTR-00568",
+      "sourceIndex": 568,
+      "type": "L",
+      "area": "Drive Hall",
+      "station": "Spindle 9",
+      "probability": 0.0,
+      "confidence": 1.0,
+      "risk": "LOW",
+      "internalRisk": "LOW",
+      "inspectionFlag": false,
+      "recommendation": "Continue monitoring",
+      "actualOutcome": 0,
+      "summary": "Worn tool, Machine grade pattern",
+      "predictionPercent": 0,
+      "sensorReadings": {
+        "Torque [Nm]": 22.1,
+        "Tool wear [min]": 171,
+        "Rotational speed [rpm]": 1935,
+        "Process temperature [K]": 309.7,
+        "Air temperature [K]": 297.8
+      },
+      "lime": [
+        {
+          "feature_rule": "Tool wear [min] > 0.86",
+          "featureKey": "Tool wear [min]",
+          "currentValueLabel": "Current value: 171 min",
+          "contribution": 0.029779983306847634
+        },
+        {
+          "feature_rule": "Air temperature [K] <= -0.85",
+          "featureKey": "Air temperature [K]",
+          "currentValueLabel": "Current value: 297.8 K",
+          "contribution": -0.01943528807591784
+        },
+        {
+          "feature_rule": "Rotational speed [rpm] > 0.42",
+          "featureKey": "Rotational speed [rpm]",
+          "currentValueLabel": "Current value: 1935 rpm",
+          "contribution": -0.016790166190531804
+        },
+        {
+          "feature_rule": "Torque [Nm] <= -0.68",
+          "featureKey": "Torque [Nm]",
+          "currentValueLabel": "Current value: 22.1 Nm",
+          "contribution": -0.016787153530765774
+        },
+        {
+          "feature_rule": "0.00 < Type_L <= 1.00",
+          "featureKey": "Type",
+          "currentValueLabel": "Current grade: L",
+          "contribution": 0.006016007331732971
+        }
+      ]
+    },
+    "AURORA-CNV-00823": {
+      "machineId": "AURORA-CNV-00823",
+      "sourceIndex": 823,
+      "type": "M",
+      "area": "Assembly-S2",
+      "station": "Conveyor F",
+      "probability": 0.0,
+      "confidence": 1.0,
+      "risk": "LOW",
+      "internalRisk": "LOW",
+      "inspectionFlag": false,
+      "recommendation": "Continue monitoring",
+      "actualOutcome": 0,
+      "summary": "General sensor drift",
+      "predictionPercent": 0,
+      "sensorReadings": {
+        "Torque [Nm]": 39.9,
+        "Tool wear [min]": 153,
+        "Rotational speed [rpm]": 1482,
+        "Process temperature [K]": 307.5,
+        "Air temperature [K]": 296.6
+      },
+      "lime": [
+        {
+          "feature_rule": "-0.68 < Torque [Nm] <= 0.01",
+          "featureKey": "Torque [Nm]",
+          "currentValueLabel": "Current value: 39.9 Nm",
+          "contribution": -0.022618284512795614
+        },
+        {
+          "feature_rule": "Air temperature [K] <= -0.85",
+          "featureKey": "Air temperature [K]",
+          "currentValueLabel": "Current value: 296.6 K",
+          "contribution": -0.021913391325436765
+        },
+        {
+          "feature_rule": "-0.65 < Rotational speed [rpm] <= -0.20",
+          "featureKey": "Rotational speed [rpm]",
+          "currentValueLabel": "Current value: 1482 rpm",
+          "contribution": -0.019766647191037
+        },
+        {
+          "feature_rule": "-0.02 < Tool wear [min] <= 0.86",
+          "featureKey": "Tool wear [min]",
+          "currentValueLabel": "Current value: 153 min",
+          "contribution": -0.013778170541245657
+        },
+        {
+          "feature_rule": "Type_L <= 0.00",
+          "featureKey": "Type",
+          "currentValueLabel": "Current grade: M",
+          "contribution": -0.007036815867412861
+        }
+      ]
+    },
+    "AURORA-CNC-08787": {
+      "machineId": "AURORA-CNC-08787",
+      "sourceIndex": 8787,
+      "type": "M",
+      "area": "Trim-West",
+      "station": "Trim Line B",
+      "probability": 0.0,
+      "confidence": 1.0,
+      "risk": "LOW",
+      "internalRisk": "LOW",
+      "inspectionFlag": false,
+      "recommendation": "Continue monitoring",
+      "actualOutcome": 0,
+      "summary": "Running hot",
+      "predictionPercent": 0,
+      "sensorReadings": {
+        "Torque [Nm]": 30.1,
+        "Tool wear [min]": 40,
+        "Rotational speed [rpm]": 1699,
+        "Process temperature [K]": 308.5,
+        "Air temperature [K]": 297.5
+      },
+      "lime": [
+        {
+          "feature_rule": "Air temperature [K] <= -0.85",
+          "featureKey": "Air temperature [K]",
+          "currentValueLabel": "Current value: 297.5 K",
+          "contribution": -0.022949048419816
+        },
+        {
+          "feature_rule": "Rotational speed [rpm] > 0.42",
+          "featureKey": "Rotational speed [rpm]",
+          "currentValueLabel": "Current value: 1699 rpm",
+          "contribution": -0.01985365609325416
+        },
+        {
+          "feature_rule": "Torque [Nm] <= -0.68",
+          "featureKey": "Torque [Nm]",
+          "currentValueLabel": "Current value: 30.1 Nm",
+          "contribution": -0.014656167671074702
+        },
+        {
+          "feature_rule": "Tool wear [min] <= -0.87",
+          "featureKey": "Tool wear [min]",
+          "currentValueLabel": "Current value: 40 min",
+          "contribution": -0.005578674323722903
+        },
+        {
+          "feature_rule": "Process temperature [K] <= -0.82",
+          "featureKey": "Process temperature [K]",
+          "currentValueLabel": "Current value: 308.5 K",
+          "contribution": 0.0028138478224691483
+        }
+      ]
+    },
+    "AURORA-RBT-00120": {
+      "machineId": "AURORA-RBT-00120",
+      "sourceIndex": 120,
+      "type": "L",
+      "area": "Paint-East",
+      "station": "Robot Cell 5",
+      "probability": 0.0,
+      "confidence": 1.0,
+      "risk": "LOW",
+      "internalRisk": "LOW",
+      "inspectionFlag": false,
+      "recommendation": "Continue monitoring",
+      "actualOutcome": 0,
+      "summary": "Running hot",
+      "predictionPercent": 0,
+      "sensorReadings": {
+        "Torque [Nm]": 44.7,
+        "Tool wear [min]": 108,
+        "Rotational speed [rpm]": 1433,
+        "Process temperature [K]": 308.7,
+        "Air temperature [K]": 298.9
+      },
+      "lime": [
+        {
+          "feature_rule": "0.01 < Torque [Nm] <= 0.69",
+          "featureKey": "Torque [Nm]",
+          "currentValueLabel": "Current value: 44.7 Nm",
+          "contribution": -0.01762506365659997
+        },
+        {
+          "feature_rule": "-0.85 < Air temperature [K] <= 0.05",
+          "featureKey": "Air temperature [K]",
+          "currentValueLabel": "Current value: 298.9 K",
+          "contribution": -0.01674675792487132
+        },
+        {
+          "feature_rule": "-0.65 < Rotational speed [rpm] <= -0.20",
+          "featureKey": "Rotational speed [rpm]",
+          "currentValueLabel": "Current value: 1433 rpm",
+          "contribution": -0.015559032940342518
+        },
+        {
+          "feature_rule": "-0.02 < Tool wear [min] <= 0.86",
+          "featureKey": "Tool wear [min]",
+          "currentValueLabel": "Current value: 108 min",
+          "contribution": -0.010876342419929382
+        },
+        {
+          "feature_rule": "Process temperature [K] <= -0.82",
+          "featureKey": "Process temperature [K]",
+          "currentValueLabel": "Current value: 308.7 K",
+          "contribution": 0.006273926780947776
+        }
+      ]
+    },
+    "AURORA-CNC-01427": {
+      "machineId": "AURORA-CNC-01427",
+      "sourceIndex": 1427,
+      "type": "L",
+      "area": "Machining",
+      "station": "Mill Station 1",
+      "probability": 0.0,
+      "confidence": 1.0,
+      "risk": "LOW",
+      "internalRisk": "LOW",
+      "inspectionFlag": false,
+      "recommendation": "Continue monitoring",
+      "actualOutcome": 0,
+      "summary": "Low speed, Machine grade pattern",
+      "predictionPercent": 0,
+      "sensorReadings": {
+        "Torque [Nm]": 40.3,
+        "Tool wear [min]": 11,
+        "Rotational speed [rpm]": 1394,
+        "Process temperature [K]": 309.8,
+        "Air temperature [K]": 298.7
+      },
+      "lime": [
+        {
+          "feature_rule": "Rotational speed [rpm] <= -0.65",
+          "featureKey": "Rotational speed [rpm]",
+          "currentValueLabel": "Current value: 1394 rpm",
+          "contribution": 0.050946658216246894
+        },
+        {
+          "feature_rule": "-0.85 < Air temperature [K] <= 0.05",
+          "featureKey": "Air temperature [K]",
+          "currentValueLabel": "Current value: 298.7 K",
+          "contribution": -0.016638233282910874
+        },
+        {
+          "feature_rule": "Tool wear [min] <= -0.87",
+          "featureKey": "Tool wear [min]",
+          "currentValueLabel": "Current value: 11 min",
+          "contribution": -0.013228218441477648
+        },
+        {
+          "feature_rule": "0.01 < Torque [Nm] <= 0.69",
+          "featureKey": "Torque [Nm]",
+          "currentValueLabel": "Current value: 40.3 Nm",
+          "contribution": -0.013125280640843777
+        },
+        {
+          "feature_rule": "Type_H <= 0.00",
+          "featureKey": "Type",
+          "currentValueLabel": "Current grade: L",
+          "contribution": 0.005758797270163726
+        }
+      ]
+    }
+  },
+  "tryIt": {
+    "threshold": 0.039696969696969696,
+    "typeOptions": [
+      "H",
+      "L",
+      "M"
+    ],
+    "featureDefaults": {
+      "Type": "L",
+      "Air temperature [K]": 300.0,
+      "Process temperature [K]": 310.0,
+      "Rotational speed [rpm]": 1500,
+      "Torque [Nm]": 55.0,
+      "Tool wear [min]": 180
+    },
+    "featureBounds": {
+      "Type": {
+        "min": null,
+        "max": null
+      },
+      "Air temperature [K]": {
+        "min": 295.3,
+        "max": 304.5
+      },
+      "Process temperature [K]": {
+        "min": 305.7,
+        "max": 313.8
+      },
+      "Rotational speed [rpm]": {
+        "min": 1168.0,
+        "max": 2886.0
+      },
+      "Torque [Nm]": {
+        "min": 3.8,
+        "max": 76.6
+      },
+      "Tool wear [min]": {
+        "min": 0.0,
+        "max": 253.0
+      }
+    },
+    "scenarios": {
+      "Worn tool": {
+        "Type": "L",
+        "Air temperature [K]": 300.0,
+        "Process temperature [K]": 309.4,
+        "Rotational speed [rpm]": 1420,
+        "Torque [Nm]": 61.0,
+        "Tool wear [min]": 225
+      },
+      "Overstrain": {
+        "Type": "M",
+        "Air temperature [K]": 299.5,
+        "Process temperature [K]": 308.1,
+        "Rotational speed [rpm]": 1310,
+        "Torque [Nm]": 66.0,
+        "Tool wear [min]": 170
+      },
+      "Running hot": {
+        "Type": "H",
+        "Air temperature [K]": 303.5,
+        "Process temperature [K]": 313.6,
+        "Rotational speed [rpm]": 1510,
+        "Torque [Nm]": 49.0,
+        "Tool wear [min]": 140
+      },
+      "Healthy": {
+        "Type": "L",
+        "Air temperature [K]": 300.0,
+        "Process temperature [K]": 310.0,
+        "Rotational speed [rpm]": 1500,
+        "Torque [Nm]": 55.0,
+        "Tool wear [min]": 180
+      }
+    }
+  },
+  "howItWorks": {
+    "headlineMetrics": {
+      "recall": 0.9264705882352942,
+      "precision": 0.2625,
+      "auc": 0.9626796370722203
+    },
+    "models": [
+      {
+        "name": "Random Forest",
+        "winner": true,
+        "recall": 0.9264705882352942,
+        "precision": 0.2625,
+        "auc": 0.9626796370722203,
+        "cost": 6770,
+        "threshold": 0.04
+      },
+      {
+        "name": "TabNet",
+        "winner": false,
+        "recall": 0.9411764705882353,
+        "precision": 0.10094637223974763,
+        "auc": 0.9274981731823163,
+        "cost": 9700,
+        "threshold": 0.01
+      },
+      {
+        "name": "Logistic Regression",
+        "winner": false,
+        "recall": 0.9117647058823529,
+        "precision": 0.09582689335394126,
+        "auc": 0.9056220314212643,
+        "cost": 11850,
+        "threshold": 0.32
+      }
+    ],
+    "threshold": 0.04,
+    "thresholdCurves": {
+      "Logistic Regression": [
+        {
+          "threshold": 0.01,
+          "value": 0.1389243391066545
+        },
+        {
+          "threshold": 0.014949494949494949,
+          "value": 0.12889699179580674
+        },
+        {
+          "threshold": 0.0198989898989899,
+          "value": 0.11832269826800365
+        },
+        {
+          "threshold": 0.02484848484848485,
+          "value": 0.10537830446672744
+        },
+        {
+          "threshold": 0.029797979797979796,
+          "value": 0.095897903372835
+        },
+        {
+          "threshold": 0.03474747474747475,
+          "value": 0.10628988149498633
+        },
+        {
+          "threshold": 0.039696969696969696,
+          "value": 0.099179580674567
+        },
+        {
+          "threshold": 0.04464646464646465,
+          "value": 0.09134001823154056
+        },
+        {
+          "threshold": 0.049595959595959596,
+          "value": 0.08350045578851413
+        },
+        {
+          "threshold": 0.05454545454545454,
+          "value": 0.07693710118505014
+        },
+        {
+          "threshold": 0.059494949494949496,
+          "value": 0.07274384685505925
+        },
+        {
+          "threshold": 0.06444444444444444,
+          "value": 0.06599817684594349
+        },
+        {
+          "threshold": 0.06939393939393938,
+          "value": 0.060528714676390157
+        },
+        {
+          "threshold": 0.07434343434343434,
+          "value": 0.056153144940747496
+        },
+        {
+          "threshold": 0.07929292929292929,
+          "value": 0.04995442114858706
+        },
+        {
+          "threshold": 0.08424242424242423,
+          "value": 0.04375569735642662
+        },
+        {
+          "threshold": 0.08919191919191918,
+          "value": 0.03938012762078395
+        },
+        {
+          "threshold": 0.09414141414141414,
+          "value": 0.03536918869644485
+        },
+        {
+          "threshold": 0.09909090909090908,
+          "value": 0.03190519598906107
+        },
+        {
+          "threshold": 0.10404040404040403,
+          "value": 0.02862351868732908
+        },
+        {
+          "threshold": 0.10898989898989898,
+          "value": 0.023701002734731084
+        },
+        {
+          "threshold": 0.11393939393939392,
+          "value": 0.02041932543299909
+        },
+        {
+          "threshold": 0.11888888888888888,
+          "value": 0.017137648131267093
+        },
+        {
+          "threshold": 0.12383838383838383,
+          "value": 0.014767547857793984
+        },
+        {
+          "threshold": 0.12878787878787878,
+          "value": 0.010756608933454877
+        },
+        {
+          "threshold": 0.13373737373737374,
+          "value": 0.025159525979945304
+        },
+        {
+          "threshold": 0.1386868686868687,
+          "value": 0.02187784867821331
+        },
+        {
+          "threshold": 0.14363636363636365,
+          "value": 0.019690063810391976
+        },
+        {
+          "threshold": 0.1485858585858586,
+          "value": 0.016043755697356426
+        },
+        {
+          "threshold": 0.15353535353535352,
+          "value": 0.03081130355515041
+        },
+        {
+          "threshold": 0.15848484848484848,
+          "value": 0.026618049225159528
+        },
+        {
+          "threshold": 0.16343434343434343,
+          "value": 0.02406563354603464
+        },
+        {
+          "threshold": 0.16838383838383839,
+          "value": 0.02187784867821331
+        },
+        {
+          "threshold": 0.17333333333333334,
+          "value": 0.01877848678213309
+        },
+        {
+          "threshold": 0.1782828282828283,
+          "value": 0.016226071103008204
+        },
+        {
+          "threshold": 0.18323232323232325,
+          "value": 0.01349134001823154
+        },
+        {
+          "threshold": 0.18818181818181817,
+          "value": 0.010391978122151322
+        },
+        {
+          "threshold": 0.19313131313131313,
+          "value": 0.00747493163172288
+        },
+        {
+          "threshold": 0.19808080808080808,
+          "value": 0.02333637192342753
+        },
+        {
+          "threshold": 0.20303030303030303,
+          "value": 0.019325432999088423
+        },
+        {
+          "threshold": 0.207979797979798,
+          "value": 0.01804922515952598
+        },
+        {
+          "threshold": 0.21292929292929294,
+          "value": 0.015132178669097539
+        },
+        {
+          "threshold": 0.21787878787878787,
+          "value": 0.01276207839562443
+        },
+        {
+          "threshold": 0.22282828282828282,
+          "value": 0.010756608933454877
+        },
+        {
+          "threshold": 0.22777777777777777,
+          "value": 0.008568824065633546
+        },
+        {
+          "threshold": 0.23272727272727273,
+          "value": 0.006198723792160438
+        },
+        {
+          "threshold": 0.23767676767676768,
+          "value": 0.004193254329990884
+        },
+        {
+          "threshold": 0.24262626262626263,
+          "value": 0.0016408386508659982
+        },
+        {
+          "threshold": 0.24757575757575756,
+          "value": 0.0007292616226071103
+        },
+        {
+          "threshold": 0.2525252525252525,
+          "value": 0.0
+        },
+        {
+          "threshold": 0.25747474747474747,
+          "value": 0.015679124886052873
+        },
+        {
+          "threshold": 0.26242424242424245,
+          "value": 0.013126709206927985
+        },
+        {
+          "threshold": 0.2673737373737374,
+          "value": 0.011850501367365542
+        },
+        {
+          "threshold": 0.2723232323232323,
+          "value": 0.010027347310847767
+        },
+        {
+          "threshold": 0.2772727272727273,
+          "value": 0.02716499544211486
+        },
+        {
+          "threshold": 0.2822222222222222,
+          "value": 0.024612579762989972
+        },
+        {
+          "threshold": 0.2871717171717172,
+          "value": 0.02333637192342753
+        },
+        {
+          "threshold": 0.2921212121212121,
+          "value": 0.021695533272561532
+        },
+        {
+          "threshold": 0.29707070707070704,
+          "value": 0.0211485870556062
+        },
+        {
+          "threshold": 0.302020202020202,
+          "value": 0.019325432999088423
+        },
+        {
+          "threshold": 0.30696969696969695,
+          "value": 0.016590701914311758
+        },
+        {
+          "threshold": 0.31191919191919193,
+          "value": 0.014585232452142206
+        },
+        {
+          "threshold": 0.31686868686868686,
+          "value": 0.013309024612579764
+        },
+        {
+          "threshold": 0.32181818181818184,
+          "value": 0.01276207839562443
+        },
+        {
+          "threshold": 0.32676767676767676,
+          "value": 0.029717411121239743
+        },
+        {
+          "threshold": 0.3317171717171717,
+          "value": 0.02771194165907019
+        },
+        {
+          "threshold": 0.33666666666666667,
+          "value": 0.026800364630811303
+        },
+        {
+          "threshold": 0.3416161616161616,
+          "value": 0.02552415679124886
+        },
+        {
+          "threshold": 0.3465656565656566,
+          "value": 0.02424794895168642
+        },
+        {
+          "threshold": 0.3515151515151515,
+          "value": 0.022789425706472195
+        },
+        {
+          "threshold": 0.3564646464646465,
+          "value": 0.021330902461257975
+        },
+        {
+          "threshold": 0.3614141414141414,
+          "value": 0.019690063810391976
+        },
+        {
+          "threshold": 0.36636363636363634,
+          "value": 0.018413855970829535
+        },
+        {
+          "threshold": 0.3713131313131313,
+          "value": 0.01731996353691887
+        },
+        {
+          "threshold": 0.37626262626262624,
+          "value": 0.033363719234275294
+        },
+        {
+          "threshold": 0.3812121212121212,
+          "value": 0.03245214220601641
+        },
+        {
+          "threshold": 0.38616161616161615,
+          "value": 0.030264357338195078
+        },
+        {
+          "threshold": 0.3911111111111111,
+          "value": 0.02917046490428441
+        },
+        {
+          "threshold": 0.39606060606060606,
+          "value": 0.028258887876025523
+        },
+        {
+          "threshold": 0.401010101010101,
+          "value": 0.026618049225159528
+        },
+        {
+          "threshold": 0.40595959595959596,
+          "value": 0.02570647219690064
+        },
+        {
+          "threshold": 0.4109090909090909,
+          "value": 0.024612579762989972
+        },
+        {
+          "threshold": 0.41585858585858587,
+          "value": 0.02406563354603464
+        },
+        {
+          "threshold": 0.4208080808080808,
+          "value": 0.022060164083865085
+        },
+        {
+          "threshold": 0.4257575757575757,
+          "value": 0.020966271649954422
+        },
+        {
+          "threshold": 0.4307070707070707,
+          "value": 0.02023701002734731
+        },
+        {
+          "threshold": 0.43565656565656563,
+          "value": 0.01877848678213309
+        },
+        {
+          "threshold": 0.4406060606060606,
+          "value": 0.017502278942570646
+        },
+        {
+          "threshold": 0.44555555555555554,
+          "value": 0.015132178669097539
+        },
+        {
+          "threshold": 0.4505050505050505,
+          "value": 0.014402917046490429
+        },
+        {
+          "threshold": 0.45545454545454545,
+          "value": 0.013126709206927985
+        },
+        {
+          "threshold": 0.46040404040404037,
+          "value": 0.012215132178669097
+        },
+        {
+          "threshold": 0.46535353535353535,
+          "value": 0.029535095715587968
+        },
+        {
+          "threshold": 0.4703030303030303,
+          "value": 0.02771194165907019
+        },
+        {
+          "threshold": 0.47525252525252526,
+          "value": 0.026618049225159528
+        },
+        {
+          "threshold": 0.4802020202020202,
+          "value": 0.02552415679124886
+        },
+        {
+          "threshold": 0.4851515151515151,
+          "value": 0.023701002734731084
+        },
+        {
+          "threshold": 0.4901010101010101,
+          "value": 0.022789425706472195
+        },
+        {
+          "threshold": 0.495050505050505,
+          "value": 0.022060164083865085
+        },
+        {
+          "threshold": 0.5,
+          "value": 0.021513217866909753
+        },
+        {
+          "threshold": 0.5049494949494949,
+          "value": 0.0390154968094804
+        },
+        {
+          "threshold": 0.5098989898989899,
+          "value": 0.03810391978122151
+        },
+        {
+          "threshold": 0.5148484848484849,
+          "value": 0.03755697356426618
+        },
+        {
+          "threshold": 0.5197979797979798,
+          "value": 0.05487693710118505
+        },
+        {
+          "threshold": 0.5247474747474747,
+          "value": 0.0723792160437557
+        },
+        {
+          "threshold": 0.5296969696969697,
+          "value": 0.0902461257976299
+        },
+        {
+          "threshold": 0.5346464646464646,
+          "value": 0.10738377392889699
+        },
+        {
+          "threshold": 0.5395959595959596,
+          "value": 0.10665451230628988
+        },
+        {
+          "threshold": 0.5445454545454546,
+          "value": 0.10537830446672744
+        },
+        {
+          "threshold": 0.5494949494949495,
+          "value": 0.10373746581586143
+        },
+        {
+          "threshold": 0.5544444444444444,
+          "value": 0.10282588878760256
+        },
+        {
+          "threshold": 0.5593939393939393,
+          "value": 0.102461257976299
+        },
+        {
+          "threshold": 0.5643434343434344,
+          "value": 0.10173199635369189
+        },
+        {
+          "threshold": 0.5692929292929293,
+          "value": 0.10100273473108477
+        },
+        {
+          "threshold": 0.5742424242424242,
+          "value": 0.11850501367365543
+        },
+        {
+          "threshold": 0.5791919191919191,
+          "value": 0.11741112123974476
+        },
+        {
+          "threshold": 0.5841414141414141,
+          "value": 0.13473108477666362
+        },
+        {
+          "threshold": 0.5890909090909091,
+          "value": 0.13436645396536007
+        },
+        {
+          "threshold": 0.594040404040404,
+          "value": 0.1340018231540565
+        },
+        {
+          "threshold": 0.598989898989899,
+          "value": 0.13309024612579762
+        },
+        {
+          "threshold": 0.6039393939393939,
+          "value": 0.13272561531449406
+        },
+        {
+          "threshold": 0.6088888888888889,
+          "value": 0.13199635369188698
+        },
+        {
+          "threshold": 0.6138383838383838,
+          "value": 0.1496809480401094
+        },
+        {
+          "threshold": 0.6187878787878788,
+          "value": 0.1487693710118505
+        },
+        {
+          "threshold": 0.6237373737373737,
+          "value": 0.1480401093892434
+        },
+        {
+          "threshold": 0.6286868686868686,
+          "value": 0.16481312670920692
+        },
+        {
+          "threshold": 0.6336363636363637,
+          "value": 0.16390154968094803
+        },
+        {
+          "threshold": 0.6385858585858586,
+          "value": 0.18176845943482225
+        },
+        {
+          "threshold": 0.6435353535353535,
+          "value": 0.1804922515952598
+        },
+        {
+          "threshold": 0.6484848484848484,
+          "value": 0.17958067456700091
+        },
+        {
+          "threshold": 0.6534343434343434,
+          "value": 0.17903372835004558
+        },
+        {
+          "threshold": 0.6583838383838384,
+          "value": 0.17775752051048313
+        },
+        {
+          "threshold": 0.6633333333333333,
+          "value": 0.1772105742935278
+        },
+        {
+          "threshold": 0.6682828282828283,
+          "value": 0.1762989972652689
+        },
+        {
+          "threshold": 0.6732323232323232,
+          "value": 0.17538742023701004
+        },
+        {
+          "threshold": 0.6781818181818181,
+          "value": 0.19288969917958068
+        },
+        {
+          "threshold": 0.6831313131313131,
+          "value": 0.19252506836827712
+        },
+        {
+          "threshold": 0.6880808080808081,
+          "value": 0.19124886052871468
+        },
+        {
+          "threshold": 0.693030303030303,
+          "value": 0.2089334548769371
+        },
+        {
+          "threshold": 0.6979797979797979,
+          "value": 0.20838650865998176
+        },
+        {
+          "threshold": 0.702929292929293,
+          "value": 0.20783956244302643
+        },
+        {
+          "threshold": 0.7078787878787879,
+          "value": 0.20692798541476753
+        },
+        {
+          "threshold": 0.7128282828282828,
+          "value": 0.2056517775752051
+        },
+        {
+          "threshold": 0.7177777777777777,
+          "value": 0.20510483135824978
+        },
+        {
+          "threshold": 0.7227272727272727,
+          "value": 0.22224247948951686
+        },
+        {
+          "threshold": 0.7276767676767677,
+          "value": 0.22151321786690975
+        },
+        {
+          "threshold": 0.7326262626262626,
+          "value": 0.22078395624430264
+        },
+        {
+          "threshold": 0.7375757575757576,
+          "value": 0.21987237921604375
+        },
+        {
+          "threshold": 0.7425252525252525,
+          "value": 0.2381039197812215
+        },
+        {
+          "threshold": 0.7474747474747474,
+          "value": 0.2375569735642662
+        },
+        {
+          "threshold": 0.7524242424242424,
+          "value": 0.23628076572470375
+        },
+        {
+          "threshold": 0.7573737373737374,
+          "value": 0.2359161349134002
+        },
+        {
+          "threshold": 0.7623232323232323,
+          "value": 0.25378304466727436
+        },
+        {
+          "threshold": 0.7672727272727272,
+          "value": 0.2714676390154968
+        },
+        {
+          "threshold": 0.7722222222222221,
+          "value": 0.2705560619872379
+        },
+        {
+          "threshold": 0.7771717171717172,
+          "value": 0.3062898814949863
+        },
+        {
+          "threshold": 0.7821212121212121,
+          "value": 0.37830446672743845
+        },
+        {
+          "threshold": 0.787070707070707,
+          "value": 0.37830446672743845
+        },
+        {
+          "threshold": 0.792020202020202,
+          "value": 0.3958067456700091
+        },
+        {
+          "threshold": 0.796969696969697,
+          "value": 0.3952597994530538
+        },
+        {
+          "threshold": 0.8019191919191919,
+          "value": 0.39471285323609845
+        },
+        {
+          "threshold": 0.8068686868686868,
+          "value": 0.3943482224247949
+        },
+        {
+          "threshold": 0.8118181818181818,
+          "value": 0.3936189608021878
+        },
+        {
+          "threshold": 0.8167676767676767,
+          "value": 0.411485870556062
+        },
+        {
+          "threshold": 0.8217171717171717,
+          "value": 0.4291704649042844
+        },
+        {
+          "threshold": 0.8266666666666667,
+          "value": 0.42880583409298084
+        },
+        {
+          "threshold": 0.8316161616161616,
+          "value": 0.4282588878760255
+        },
+        {
+          "threshold": 0.8365656565656565,
+          "value": 0.4273473108477666
+        },
+        {
+          "threshold": 0.8415151515151514,
+          "value": 0.4266180492251595
+        },
+        {
+          "threshold": 0.8464646464646465,
+          "value": 0.4448495897903373
+        },
+        {
+          "threshold": 0.8514141414141414,
+          "value": 0.44430264357338195
+        },
+        {
+          "threshold": 0.8563636363636363,
+          "value": 0.46235186873290796
+        },
+        {
+          "threshold": 0.8613131313131313,
+          "value": 0.48003646308113035
+        },
+        {
+          "threshold": 0.8662626262626262,
+          "value": 0.5159525979945305
+        },
+        {
+          "threshold": 0.8712121212121212,
+          "value": 0.533637192342753
+        },
+        {
+          "threshold": 0.8761616161616161,
+          "value": 0.5332725615314494
+        },
+        {
+          "threshold": 0.8811111111111111,
+          "value": 0.5323609845031905
+        },
+        {
+          "threshold": 0.886060606060606,
+          "value": 0.5504102096627165
+        },
+        {
+          "threshold": 0.891010101010101,
+          "value": 0.5682771194165906
+        },
+        {
+          "threshold": 0.895959595959596,
+          "value": 0.6043755697356427
+        },
+        {
+          "threshold": 0.9009090909090909,
+          "value": 0.6226071103008204
+        },
+        {
+          "threshold": 0.9058585858585858,
+          "value": 0.6408386508659982
+        },
+        {
+          "threshold": 0.9108080808080807,
+          "value": 0.6585232452142206
+        },
+        {
+          "threshold": 0.9157575757575758,
+          "value": 0.6767547857793984
+        },
+        {
+          "threshold": 0.9207070707070707,
+          "value": 0.676207839562443
+        },
+        {
+          "threshold": 0.9256565656565656,
+          "value": 0.6756608933454877
+        },
+        {
+          "threshold": 0.9306060606060605,
+          "value": 0.6751139471285323
+        },
+        {
+          "threshold": 0.9355555555555555,
+          "value": 0.7292616226071102
+        },
+        {
+          "threshold": 0.9405050505050505,
+          "value": 0.7653600729261623
+        },
+        {
+          "threshold": 0.9454545454545454,
+          "value": 0.8379216043755697
+        },
+        {
+          "threshold": 0.9504040404040404,
+          "value": 0.8561531449407475
+        },
+        {
+          "threshold": 0.9553535353535353,
+          "value": 0.8736554238833182
+        },
+        {
+          "threshold": 0.9603030303030302,
+          "value": 0.8917046490428441
+        },
+        {
+          "threshold": 0.9652525252525253,
+          "value": 0.8911577028258888
+        },
+        {
+          "threshold": 0.9702020202020202,
+          "value": 0.9092069279854148
+        },
+        {
+          "threshold": 0.9751515151515151,
+          "value": 0.909024612579763
+        },
+        {
+          "threshold": 0.98010101010101,
+          "value": 0.909024612579763
+        },
+        {
+          "threshold": 0.9850505050505051,
+          "value": 0.927073837739289
+        },
+        {
+          "threshold": 0.99,
+          "value": 1.0
+        }
+      ],
+      "Random Forest": [
+        {
+          "threshold": 0.01,
+          "value": 0.01321514907332796
+        },
+        {
+          "threshold": 0.014949494949494949,
+          "value": 0.0
+        },
+        {
+          "threshold": 0.0198989898989899,
+          "value": 0.010314262691377921
+        },
+        {
+          "threshold": 0.02484848484848485,
+          "value": 0.019500402900886383
+        },
+        {
+          "threshold": 0.029797979797979796,
+          "value": 0.016921837228041903
+        },
+        {
+          "threshold": 0.03474747474747475,
+          "value": 0.015149073327961322
+        },
+        {
+          "threshold": 0.039696969696969696,
+          "value": 0.01321514907332796
+        },
+        {
+          "threshold": 0.04464646464646465,
+          "value": 0.010636583400483481
+        },
+        {
+          "threshold": 0.049595959595959596,
+          "value": 0.009991941982272361
+        },
+        {
+          "threshold": 0.05454545454545454,
+          "value": 0.007735697018533441
+        },
+        {
+          "threshold": 0.059494949494949496,
+          "value": 0.023207091055600322
+        },
+        {
+          "threshold": 0.06444444444444444,
+          "value": 0.03851732473811442
+        },
+        {
+          "threshold": 0.06939393939393938,
+          "value": 0.03722804190169218
+        },
+        {
+          "threshold": 0.07434343434343434,
+          "value": 0.052054794520547946
+        },
+        {
+          "threshold": 0.07929292929292929,
+          "value": 0.05173247381144239
+        },
+        {
+          "threshold": 0.08424242424242423,
+          "value": 0.08251410153102337
+        },
+        {
+          "threshold": 0.08919191919191918,
+          "value": 0.08203062046736503
+        },
+        {
+          "threshold": 0.09414141414141414,
+          "value": 0.08025785656728444
+        },
+        {
+          "threshold": 0.09909090909090908,
+          "value": 0.07977437550362611
+        },
+        {
+          "threshold": 0.10404040404040403,
+          "value": 0.07864625302175665
+        },
+        {
+          "threshold": 0.10898989898989898,
+          "value": 0.07832393231265108
+        },
+        {
+          "threshold": 0.11393939393939392,
+          "value": 0.07735697018533441
+        },
+        {
+          "threshold": 0.11888888888888888,
+          "value": 0.07735697018533441
+        },
+        {
+          "threshold": 0.12383838383838383,
+          "value": 0.09331184528605962
+        },
+        {
+          "threshold": 0.12878787878787878,
+          "value": 0.09331184528605962
+        },
+        {
+          "threshold": 0.13373737373737374,
+          "value": 0.09282836422240129
+        },
+        {
+          "threshold": 0.1386868686868687,
+          "value": 0.09218372280419017
+        },
+        {
+          "threshold": 0.14363636363636365,
+          "value": 0.09186140209508462
+        },
+        {
+          "threshold": 0.1485858585858586,
+          "value": 0.09153908138597905
+        },
+        {
+          "threshold": 0.15353535353535352,
+          "value": 0.09105560032232071
+        },
+        {
+          "threshold": 0.15848484848484848,
+          "value": 0.10668815471394037
+        },
+        {
+          "threshold": 0.16343434343434343,
+          "value": 0.12232070910556003
+        },
+        {
+          "threshold": 0.16838383838383839,
+          "value": 0.12232070910556003
+        },
+        {
+          "threshold": 0.17333333333333334,
+          "value": 0.12215954875100725
+        },
+        {
+          "threshold": 0.1782828282828283,
+          "value": 0.13746978243352134
+        },
+        {
+          "threshold": 0.18323232323232325,
+          "value": 0.13730862207896857
+        },
+        {
+          "threshold": 0.18818181818181817,
+          "value": 0.13682514101531024
+        },
+        {
+          "threshold": 0.19313131313131313,
+          "value": 0.13666398066075747
+        },
+        {
+          "threshold": 0.19808080808080808,
+          "value": 0.1361804995970991
+        },
+        {
+          "threshold": 0.20303030303030303,
+          "value": 0.1522965350523771
+        },
+        {
+          "threshold": 0.207979797979798,
+          "value": 0.15213537469782434
+        },
+        {
+          "threshold": 0.21292929292929294,
+          "value": 0.1679290894439968
+        },
+        {
+          "threshold": 0.21787878787878787,
+          "value": 0.18404512489927477
+        },
+        {
+          "threshold": 0.22282828282828282,
+          "value": 0.183883964544722
+        },
+        {
+          "threshold": 0.22777777777777777,
+          "value": 0.19935535858178888
+        },
+        {
+          "threshold": 0.23272727272727273,
+          "value": 0.1991941982272361
+        },
+        {
+          "threshold": 0.23767676767676768,
+          "value": 0.21514907332796132
+        },
+        {
+          "threshold": 0.24262626262626263,
+          "value": 0.21514907332796132
+        },
+        {
+          "threshold": 0.24757575757575756,
+          "value": 0.21482675261885575
+        },
+        {
+          "threshold": 0.2525252525252525,
+          "value": 0.21482675261885575
+        },
+        {
+          "threshold": 0.25747474747474747,
+          "value": 0.21466559226430298
+        },
+        {
+          "threshold": 0.26242424242424245,
+          "value": 0.21450443190975022
+        },
+        {
+          "threshold": 0.2673737373737374,
+          "value": 0.21418211120064465
+        },
+        {
+          "threshold": 0.2723232323232323,
+          "value": 0.21402095084609185
+        },
+        {
+          "threshold": 0.2772727272727273,
+          "value": 0.21402095084609185
+        },
+        {
+          "threshold": 0.2822222222222222,
+          "value": 0.23013698630136986
+        },
+        {
+          "threshold": 0.2871717171717172,
+          "value": 0.2299758259468171
+        },
+        {
+          "threshold": 0.2921212121212121,
+          "value": 0.24609186140209507
+        },
+        {
+          "threshold": 0.29707070707070704,
+          "value": 0.24609186140209507
+        },
+        {
+          "threshold": 0.302020202020202,
+          "value": 0.2622078968573731
+        },
+        {
+          "threshold": 0.30696969696969695,
+          "value": 0.2944399677679291
+        },
+        {
+          "threshold": 0.31191919191919193,
+          "value": 0.31023368251410155
+        },
+        {
+          "threshold": 0.31686868686868686,
+          "value": 0.32618855761482674
+        },
+        {
+          "threshold": 0.32181818181818184,
+          "value": 0.3257050765511684
+        },
+        {
+          "threshold": 0.32676767676767676,
+          "value": 0.34182111200644644
+        },
+        {
+          "threshold": 0.3317171717171717,
+          "value": 0.3416599516518936
+        },
+        {
+          "threshold": 0.33666666666666667,
+          "value": 0.3416599516518936
+        },
+        {
+          "threshold": 0.3416161616161616,
+          "value": 0.3416599516518936
+        },
+        {
+          "threshold": 0.3465656565656566,
+          "value": 0.3416599516518936
+        },
+        {
+          "threshold": 0.3515151515151515,
+          "value": 0.37389202256244963
+        },
+        {
+          "threshold": 0.3564646464646465,
+          "value": 0.3735697018533441
+        },
+        {
+          "threshold": 0.3614141414141414,
+          "value": 0.3895245769540693
+        },
+        {
+          "threshold": 0.36636363636363634,
+          "value": 0.3893634165995165
+        },
+        {
+          "threshold": 0.3713131313131313,
+          "value": 0.38904109589041097
+        },
+        {
+          "threshold": 0.37626262626262624,
+          "value": 0.38904109589041097
+        },
+        {
+          "threshold": 0.3812121212121212,
+          "value": 0.405157131345689
+        },
+        {
+          "threshold": 0.38616161616161615,
+          "value": 0.4048348106365834
+        },
+        {
+          "threshold": 0.3911111111111111,
+          "value": 0.4209508460918614
+        },
+        {
+          "threshold": 0.39606060606060606,
+          "value": 0.4209508460918614
+        },
+        {
+          "threshold": 0.401010101010101,
+          "value": 0.4209508460918614
+        },
+        {
+          "threshold": 0.40595959595959596,
+          "value": 0.4209508460918614
+        },
+        {
+          "threshold": 0.4109090909090909,
+          "value": 0.4370668815471394
+        },
+        {
+          "threshold": 0.41585858585858587,
+          "value": 0.4531829170024174
+        },
+        {
+          "threshold": 0.4208080808080808,
+          "value": 0.46929895245769543
+        },
+        {
+          "threshold": 0.4257575757575757,
+          "value": 0.46929895245769543
+        },
+        {
+          "threshold": 0.4307070707070707,
+          "value": 0.46929895245769543
+        },
+        {
+          "threshold": 0.43565656565656563,
+          "value": 0.5013698630136987
+        },
+        {
+          "threshold": 0.4406060606060606,
+          "value": 0.5013698630136987
+        },
+        {
+          "threshold": 0.44555555555555554,
+          "value": 0.5174858984689766
+        },
+        {
+          "threshold": 0.4505050505050505,
+          "value": 0.5336019339242546
+        },
+        {
+          "threshold": 0.45545454545454545,
+          "value": 0.5336019339242546
+        },
+        {
+          "threshold": 0.46040404040404037,
+          "value": 0.5334407735697019
+        },
+        {
+          "threshold": 0.46535353535353535,
+          "value": 0.5334407735697019
+        },
+        {
+          "threshold": 0.4703030303030303,
+          "value": 0.533279613215149
+        },
+        {
+          "threshold": 0.47525252525252526,
+          "value": 0.533279613215149
+        },
+        {
+          "threshold": 0.4802020202020202,
+          "value": 0.5493956486704271
+        },
+        {
+          "threshold": 0.4851515151515151,
+          "value": 0.5493956486704271
+        },
+        {
+          "threshold": 0.4901010101010101,
+          "value": 0.5653505237711522
+        },
+        {
+          "threshold": 0.495050505050505,
+          "value": 0.5653505237711522
+        },
+        {
+          "threshold": 0.5,
+          "value": 0.5651893634165995
+        },
+        {
+          "threshold": 0.5049494949494949,
+          "value": 0.5813053988718775
+        },
+        {
+          "threshold": 0.5098989898989899,
+          "value": 0.5813053988718775
+        },
+        {
+          "threshold": 0.5148484848484849,
+          "value": 0.5813053988718775
+        },
+        {
+          "threshold": 0.5197979797979798,
+          "value": 0.5813053988718775
+        },
+        {
+          "threshold": 0.5247474747474747,
+          "value": 0.5813053988718775
+        },
+        {
+          "threshold": 0.5296969696969697,
+          "value": 0.5813053988718775
+        },
+        {
+          "threshold": 0.5346464646464646,
+          "value": 0.6135374697824335
+        },
+        {
+          "threshold": 0.5395959595959596,
+          "value": 0.6135374697824335
+        },
+        {
+          "threshold": 0.5445454545454546,
+          "value": 0.6135374697824335
+        },
+        {
+          "threshold": 0.5494949494949495,
+          "value": 0.6296535052377116
+        },
+        {
+          "threshold": 0.5544444444444444,
+          "value": 0.6296535052377116
+        },
+        {
+          "threshold": 0.5593939393939393,
+          "value": 0.6457695406929895
+        },
+        {
+          "threshold": 0.5643434343434344,
+          "value": 0.6618855761482675
+        },
+        {
+          "threshold": 0.5692929292929293,
+          "value": 0.6617244157937148
+        },
+        {
+          "threshold": 0.5742424242424242,
+          "value": 0.6617244157937148
+        },
+        {
+          "threshold": 0.5791919191919191,
+          "value": 0.6778404512489927
+        },
+        {
+          "threshold": 0.5841414141414141,
+          "value": 0.7100725221595487
+        },
+        {
+          "threshold": 0.5890909090909091,
+          "value": 0.7100725221595487
+        },
+        {
+          "threshold": 0.594040404040404,
+          "value": 0.7100725221595487
+        },
+        {
+          "threshold": 0.598989898989899,
+          "value": 0.7261885576148267
+        },
+        {
+          "threshold": 0.6039393939393939,
+          "value": 0.7261885576148267
+        },
+        {
+          "threshold": 0.6088888888888889,
+          "value": 0.7261885576148267
+        },
+        {
+          "threshold": 0.6138383838383838,
+          "value": 0.7421434327155519
+        },
+        {
+          "threshold": 0.6187878787878788,
+          "value": 0.7421434327155519
+        },
+        {
+          "threshold": 0.6237373737373737,
+          "value": 0.774375503626108
+        },
+        {
+          "threshold": 0.6286868686868686,
+          "value": 0.790491539081386
+        },
+        {
+          "threshold": 0.6336363636363637,
+          "value": 0.806607574536664
+        },
+        {
+          "threshold": 0.6385858585858586,
+          "value": 0.806607574536664
+        },
+        {
+          "threshold": 0.6435353535353535,
+          "value": 0.806607574536664
+        },
+        {
+          "threshold": 0.6484848484848484,
+          "value": 0.806607574536664
+        },
+        {
+          "threshold": 0.6534343434343434,
+          "value": 0.8227236099919419
+        },
+        {
+          "threshold": 0.6583838383838384,
+          "value": 0.8227236099919419
+        },
+        {
+          "threshold": 0.6633333333333333,
+          "value": 0.8227236099919419
+        },
+        {
+          "threshold": 0.6682828282828283,
+          "value": 0.8227236099919419
+        },
+        {
+          "threshold": 0.6732323232323232,
+          "value": 0.8227236099919419
+        },
+        {
+          "threshold": 0.6781818181818181,
+          "value": 0.8227236099919419
+        },
+        {
+          "threshold": 0.6831313131313131,
+          "value": 0.8227236099919419
+        },
+        {
+          "threshold": 0.6880808080808081,
+          "value": 0.8227236099919419
+        },
+        {
+          "threshold": 0.693030303030303,
+          "value": 0.83883964544722
+        },
+        {
+          "threshold": 0.6979797979797979,
+          "value": 0.83883964544722
+        },
+        {
+          "threshold": 0.702929292929293,
+          "value": 0.854955680902498
+        },
+        {
+          "threshold": 0.7078787878787879,
+          "value": 0.871071716357776
+        },
+        {
+          "threshold": 0.7128282828282828,
+          "value": 0.871071716357776
+        },
+        {
+          "threshold": 0.7177777777777777,
+          "value": 0.871071716357776
+        },
+        {
+          "threshold": 0.7227272727272727,
+          "value": 0.887187751813054
+        },
+        {
+          "threshold": 0.7276767676767677,
+          "value": 0.9033037872683319
+        },
+        {
+          "threshold": 0.7326262626262626,
+          "value": 0.91941982272361
+        },
+        {
+          "threshold": 0.7375757575757576,
+          "value": 0.935535858178888
+        },
+        {
+          "threshold": 0.7425252525252525,
+          "value": 0.935535858178888
+        },
+        {
+          "threshold": 0.7474747474747474,
+          "value": 0.935535858178888
+        },
+        {
+          "threshold": 0.7524242424242424,
+          "value": 0.951651893634166
+        },
+        {
+          "threshold": 0.7573737373737374,
+          "value": 0.951651893634166
+        },
+        {
+          "threshold": 0.7623232323232323,
+          "value": 0.951651893634166
+        },
+        {
+          "threshold": 0.7672727272727272,
+          "value": 0.951651893634166
+        },
+        {
+          "threshold": 0.7722222222222221,
+          "value": 0.951651893634166
+        },
+        {
+          "threshold": 0.7771717171717172,
+          "value": 0.951651893634166
+        },
+        {
+          "threshold": 0.7821212121212121,
+          "value": 0.951651893634166
+        },
+        {
+          "threshold": 0.787070707070707,
+          "value": 0.967767929089444
+        },
+        {
+          "threshold": 0.792020202020202,
+          "value": 0.967767929089444
+        },
+        {
+          "threshold": 0.796969696969697,
+          "value": 0.967767929089444
+        },
+        {
+          "threshold": 0.8019191919191919,
+          "value": 0.967767929089444
+        },
+        {
+          "threshold": 0.8068686868686868,
+          "value": 0.983883964544722
+        },
+        {
+          "threshold": 0.8118181818181818,
+          "value": 0.983883964544722
+        },
+        {
+          "threshold": 0.8167676767676767,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.8217171717171717,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.8266666666666667,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.8316161616161616,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.8365656565656565,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.8415151515151514,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.8464646464646465,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.8514141414141414,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.8563636363636363,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.8613131313131313,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.8662626262626262,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.8712121212121212,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.8761616161616161,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.8811111111111111,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.886060606060606,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.891010101010101,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.895959595959596,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.9009090909090909,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.9058585858585858,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.9108080808080807,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.9157575757575758,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.9207070707070707,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.9256565656565656,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.9306060606060605,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.9355555555555555,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.9405050505050505,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.9454545454545454,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.9504040404040404,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.9553535353535353,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.9603030303030302,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.9652525252525253,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.9702020202020202,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.9751515151515151,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.98010101010101,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.9850505050505051,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.99,
+          "value": 1.0
+        }
+      ],
+      "TabNet": [
+        {
+          "threshold": 0.01,
+          "value": 0.0
+        },
+        {
+          "threshold": 0.014949494949494949,
+          "value": 0.06544502617801047
+        },
+        {
+          "threshold": 0.0198989898989899,
+          "value": 0.06230366492146597
+        },
+        {
+          "threshold": 0.02484848484848485,
+          "value": 0.05218150087260035
+        },
+        {
+          "threshold": 0.029797979797979796,
+          "value": 0.06352530541012216
+        },
+        {
+          "threshold": 0.03474747474747475,
+          "value": 0.11082024432809773
+        },
+        {
+          "threshold": 0.039696969696969696,
+          "value": 0.10628272251308901
+        },
+        {
+          "threshold": 0.04464646464646465,
+          "value": 0.10366492146596859
+        },
+        {
+          "threshold": 0.049595959595959596,
+          "value": 0.10104712041884817
+        },
+        {
+          "threshold": 0.05454545454545454,
+          "value": 0.1169284467713787
+        },
+        {
+          "threshold": 0.059494949494949496,
+          "value": 0.15095986038394416
+        },
+        {
+          "threshold": 0.06444444444444444,
+          "value": 0.14956369982547993
+        },
+        {
+          "threshold": 0.06939393939393938,
+          "value": 0.16596858638743456
+        },
+        {
+          "threshold": 0.07434343434343434,
+          "value": 0.20017452006980802
+        },
+        {
+          "threshold": 0.07929292929292929,
+          "value": 0.21588132635253054
+        },
+        {
+          "threshold": 0.08424242424242423,
+          "value": 0.2150087260034904
+        },
+        {
+          "threshold": 0.08919191919191918,
+          "value": 0.2136125654450262
+        },
+        {
+          "threshold": 0.09414141414141414,
+          "value": 0.23019197207678882
+        },
+        {
+          "threshold": 0.09909090909090908,
+          "value": 0.2293193717277487
+        },
+        {
+          "threshold": 0.10404040404040403,
+          "value": 0.2286212914485166
+        },
+        {
+          "threshold": 0.10898989898989898,
+          "value": 0.2448516579406632
+        },
+        {
+          "threshold": 0.11393939393939392,
+          "value": 0.2619546247818499
+        },
+        {
+          "threshold": 0.11888888888888888,
+          "value": 0.2612565445026178
+        },
+        {
+          "threshold": 0.12383838383838383,
+          "value": 0.2607329842931937
+        },
+        {
+          "threshold": 0.12878787878787878,
+          "value": 0.25986038394415356
+        },
+        {
+          "threshold": 0.13373737373737374,
+          "value": 0.2944153577661431
+        },
+        {
+          "threshold": 0.1386868686868687,
+          "value": 0.3113438045375218
+        },
+        {
+          "threshold": 0.14363636363636365,
+          "value": 0.32827225130890053
+        },
+        {
+          "threshold": 0.1485858585858586,
+          "value": 0.32792321116928447
+        },
+        {
+          "threshold": 0.15353535353535352,
+          "value": 0.3275741710296684
+        },
+        {
+          "threshold": 0.15848484848484848,
+          "value": 0.3797556719022688
+        },
+        {
+          "threshold": 0.16343434343434343,
+          "value": 0.43211169284467715
+        },
+        {
+          "threshold": 0.16838383838383839,
+          "value": 0.4319371727748691
+        },
+        {
+          "threshold": 0.17333333333333334,
+          "value": 0.43158813263525303
+        },
+        {
+          "threshold": 0.1782828282828283,
+          "value": 0.4486910994764398
+        },
+        {
+          "threshold": 0.18323232323232325,
+          "value": 0.44834205933682375
+        },
+        {
+          "threshold": 0.18818181818181817,
+          "value": 0.4656195462478185
+        },
+        {
+          "threshold": 0.19313131313131313,
+          "value": 0.4654450261780105
+        },
+        {
+          "threshold": 0.19808080808080808,
+          "value": 0.4650959860383944
+        },
+        {
+          "threshold": 0.20303030303030303,
+          "value": 0.4649214659685864
+        },
+        {
+          "threshold": 0.207979797979798,
+          "value": 0.4649214659685864
+        },
+        {
+          "threshold": 0.21292929292929294,
+          "value": 0.4643979057591623
+        },
+        {
+          "threshold": 0.21787878787878787,
+          "value": 0.4643979057591623
+        },
+        {
+          "threshold": 0.22282828282828282,
+          "value": 0.4816753926701571
+        },
+        {
+          "threshold": 0.22777777777777777,
+          "value": 0.481326352530541
+        },
+        {
+          "threshold": 0.23272727272727273,
+          "value": 0.481326352530541
+        },
+        {
+          "threshold": 0.23767676767676768,
+          "value": 0.481326352530541
+        },
+        {
+          "threshold": 0.24262626262626263,
+          "value": 0.481151832460733
+        },
+        {
+          "threshold": 0.24757575757575756,
+          "value": 0.48097731239092495
+        },
+        {
+          "threshold": 0.2525252525252525,
+          "value": 0.49842931937172774
+        },
+        {
+          "threshold": 0.25747474747474747,
+          "value": 0.49825479930191974
+        },
+        {
+          "threshold": 0.26242424242424245,
+          "value": 0.4979057591623037
+        },
+        {
+          "threshold": 0.2673737373737374,
+          "value": 0.4977312390924956
+        },
+        {
+          "threshold": 0.2723232323232323,
+          "value": 0.4977312390924956
+        },
+        {
+          "threshold": 0.2772727272727273,
+          "value": 0.4977312390924956
+        },
+        {
+          "threshold": 0.2822222222222222,
+          "value": 0.4975567190226876
+        },
+        {
+          "threshold": 0.2871717171717172,
+          "value": 0.4975567190226876
+        },
+        {
+          "threshold": 0.2921212121212121,
+          "value": 0.4975567190226876
+        },
+        {
+          "threshold": 0.29707070707070704,
+          "value": 0.4975567190226876
+        },
+        {
+          "threshold": 0.302020202020202,
+          "value": 0.49720767888307155
+        },
+        {
+          "threshold": 0.30696969696969695,
+          "value": 0.49720767888307155
+        },
+        {
+          "threshold": 0.31191919191919193,
+          "value": 0.49720767888307155
+        },
+        {
+          "threshold": 0.31686868686868686,
+          "value": 0.49720767888307155
+        },
+        {
+          "threshold": 0.32181818181818184,
+          "value": 0.49720767888307155
+        },
+        {
+          "threshold": 0.32676767676767676,
+          "value": 0.5144851657940663
+        },
+        {
+          "threshold": 0.3317171717171717,
+          "value": 0.5143106457242583
+        },
+        {
+          "threshold": 0.33666666666666667,
+          "value": 0.5317626527050611
+        },
+        {
+          "threshold": 0.3416161616161616,
+          "value": 0.5317626527050611
+        },
+        {
+          "threshold": 0.3465656565656566,
+          "value": 0.5317626527050611
+        },
+        {
+          "threshold": 0.3515151515151515,
+          "value": 0.5317626527050611
+        },
+        {
+          "threshold": 0.3564646464646465,
+          "value": 0.5315881326352531
+        },
+        {
+          "threshold": 0.3614141414141414,
+          "value": 0.5490401396160558
+        },
+        {
+          "threshold": 0.36636363636363634,
+          "value": 0.5488656195462478
+        },
+        {
+          "threshold": 0.3713131313131313,
+          "value": 0.5486910994764398
+        },
+        {
+          "threshold": 0.37626262626262624,
+          "value": 0.5661431064572425
+        },
+        {
+          "threshold": 0.3812121212121212,
+          "value": 0.5661431064572425
+        },
+        {
+          "threshold": 0.38616161616161615,
+          "value": 0.5661431064572425
+        },
+        {
+          "threshold": 0.3911111111111111,
+          "value": 0.5661431064572425
+        },
+        {
+          "threshold": 0.39606060606060606,
+          "value": 0.5659685863874345
+        },
+        {
+          "threshold": 0.401010101010101,
+          "value": 0.5659685863874345
+        },
+        {
+          "threshold": 0.40595959595959596,
+          "value": 0.5657940663176265
+        },
+        {
+          "threshold": 0.4109090909090909,
+          "value": 0.5657940663176265
+        },
+        {
+          "threshold": 0.41585858585858587,
+          "value": 0.5654450261780105
+        },
+        {
+          "threshold": 0.4208080808080808,
+          "value": 0.5652705061082024
+        },
+        {
+          "threshold": 0.4257575757575757,
+          "value": 0.5652705061082024
+        },
+        {
+          "threshold": 0.4307070707070707,
+          "value": 0.5652705061082024
+        },
+        {
+          "threshold": 0.43565656565656563,
+          "value": 0.5652705061082024
+        },
+        {
+          "threshold": 0.4406060606060606,
+          "value": 0.5652705061082024
+        },
+        {
+          "threshold": 0.44555555555555554,
+          "value": 0.5652705061082024
+        },
+        {
+          "threshold": 0.4505050505050505,
+          "value": 0.5650959860383944
+        },
+        {
+          "threshold": 0.45545454545454545,
+          "value": 0.5650959860383944
+        },
+        {
+          "threshold": 0.46040404040404037,
+          "value": 0.5650959860383944
+        },
+        {
+          "threshold": 0.46535353535353535,
+          "value": 0.5650959860383944
+        },
+        {
+          "threshold": 0.4703030303030303,
+          "value": 0.5825479930191972
+        },
+        {
+          "threshold": 0.47525252525252526,
+          "value": 0.6
+        },
+        {
+          "threshold": 0.4802020202020202,
+          "value": 0.6
+        },
+        {
+          "threshold": 0.4851515151515151,
+          "value": 0.6
+        },
+        {
+          "threshold": 0.4901010101010101,
+          "value": 0.6
+        },
+        {
+          "threshold": 0.495050505050505,
+          "value": 0.6
+        },
+        {
+          "threshold": 0.5,
+          "value": 0.6
+        },
+        {
+          "threshold": 0.5049494949494949,
+          "value": 0.6
+        },
+        {
+          "threshold": 0.5098989898989899,
+          "value": 0.6
+        },
+        {
+          "threshold": 0.5148484848484849,
+          "value": 0.6
+        },
+        {
+          "threshold": 0.5197979797979798,
+          "value": 0.6
+        },
+        {
+          "threshold": 0.5247474747474747,
+          "value": 0.6
+        },
+        {
+          "threshold": 0.5296969696969697,
+          "value": 0.6
+        },
+        {
+          "threshold": 0.5346464646464646,
+          "value": 0.6
+        },
+        {
+          "threshold": 0.5395959595959596,
+          "value": 0.6
+        },
+        {
+          "threshold": 0.5445454545454546,
+          "value": 0.6174520069808028
+        },
+        {
+          "threshold": 0.5494949494949495,
+          "value": 0.6174520069808028
+        },
+        {
+          "threshold": 0.5544444444444444,
+          "value": 0.6174520069808028
+        },
+        {
+          "threshold": 0.5593939393939393,
+          "value": 0.6172774869109947
+        },
+        {
+          "threshold": 0.5643434343434344,
+          "value": 0.6347294938917976
+        },
+        {
+          "threshold": 0.5692929292929293,
+          "value": 0.6521815008726003
+        },
+        {
+          "threshold": 0.5742424242424242,
+          "value": 0.6521815008726003
+        },
+        {
+          "threshold": 0.5791919191919191,
+          "value": 0.6521815008726003
+        },
+        {
+          "threshold": 0.5841414141414141,
+          "value": 0.6521815008726003
+        },
+        {
+          "threshold": 0.5890909090909091,
+          "value": 0.6521815008726003
+        },
+        {
+          "threshold": 0.594040404040404,
+          "value": 0.6521815008726003
+        },
+        {
+          "threshold": 0.598989898989899,
+          "value": 0.6520069808027923
+        },
+        {
+          "threshold": 0.6039393939393939,
+          "value": 0.6869109947643979
+        },
+        {
+          "threshold": 0.6088888888888889,
+          "value": 0.6869109947643979
+        },
+        {
+          "threshold": 0.6138383838383838,
+          "value": 0.6869109947643979
+        },
+        {
+          "threshold": 0.6187878787878788,
+          "value": 0.6869109947643979
+        },
+        {
+          "threshold": 0.6237373737373737,
+          "value": 0.6867364746945899
+        },
+        {
+          "threshold": 0.6286868686868686,
+          "value": 0.6867364746945899
+        },
+        {
+          "threshold": 0.6336363636363637,
+          "value": 0.6865619546247819
+        },
+        {
+          "threshold": 0.6385858585858586,
+          "value": 0.6865619546247819
+        },
+        {
+          "threshold": 0.6435353535353535,
+          "value": 0.7040139616055846
+        },
+        {
+          "threshold": 0.6484848484848484,
+          "value": 0.7040139616055846
+        },
+        {
+          "threshold": 0.6534343434343434,
+          "value": 0.7040139616055846
+        },
+        {
+          "threshold": 0.6583838383838384,
+          "value": 0.7214659685863875
+        },
+        {
+          "threshold": 0.6633333333333333,
+          "value": 0.7214659685863875
+        },
+        {
+          "threshold": 0.6682828282828283,
+          "value": 0.7214659685863875
+        },
+        {
+          "threshold": 0.6732323232323232,
+          "value": 0.7214659685863875
+        },
+        {
+          "threshold": 0.6781818181818181,
+          "value": 0.7212914485165794
+        },
+        {
+          "threshold": 0.6831313131313131,
+          "value": 0.7212914485165794
+        },
+        {
+          "threshold": 0.6880808080808081,
+          "value": 0.7212914485165794
+        },
+        {
+          "threshold": 0.693030303030303,
+          "value": 0.7212914485165794
+        },
+        {
+          "threshold": 0.6979797979797979,
+          "value": 0.7212914485165794
+        },
+        {
+          "threshold": 0.702929292929293,
+          "value": 0.7212914485165794
+        },
+        {
+          "threshold": 0.7078787878787879,
+          "value": 0.7212914485165794
+        },
+        {
+          "threshold": 0.7128282828282828,
+          "value": 0.7212914485165794
+        },
+        {
+          "threshold": 0.7177777777777777,
+          "value": 0.7212914485165794
+        },
+        {
+          "threshold": 0.7227272727272727,
+          "value": 0.7212914485165794
+        },
+        {
+          "threshold": 0.7276767676767677,
+          "value": 0.7211169284467713
+        },
+        {
+          "threshold": 0.7326262626262626,
+          "value": 0.7211169284467713
+        },
+        {
+          "threshold": 0.7375757575757576,
+          "value": 0.7211169284467713
+        },
+        {
+          "threshold": 0.7425252525252525,
+          "value": 0.7211169284467713
+        },
+        {
+          "threshold": 0.7474747474747474,
+          "value": 0.7385689354275742
+        },
+        {
+          "threshold": 0.7524242424242424,
+          "value": 0.7385689354275742
+        },
+        {
+          "threshold": 0.7573737373737374,
+          "value": 0.7385689354275742
+        },
+        {
+          "threshold": 0.7623232323232323,
+          "value": 0.7385689354275742
+        },
+        {
+          "threshold": 0.7672727272727272,
+          "value": 0.7560209424083769
+        },
+        {
+          "threshold": 0.7722222222222221,
+          "value": 0.7558464223385689
+        },
+        {
+          "threshold": 0.7771717171717172,
+          "value": 0.7558464223385689
+        },
+        {
+          "threshold": 0.7821212121212121,
+          "value": 0.7558464223385689
+        },
+        {
+          "threshold": 0.787070707070707,
+          "value": 0.7558464223385689
+        },
+        {
+          "threshold": 0.792020202020202,
+          "value": 0.7556719022687609
+        },
+        {
+          "threshold": 0.796969696969697,
+          "value": 0.7556719022687609
+        },
+        {
+          "threshold": 0.8019191919191919,
+          "value": 0.7731239092495636
+        },
+        {
+          "threshold": 0.8068686868686868,
+          "value": 0.7731239092495636
+        },
+        {
+          "threshold": 0.8118181818181818,
+          "value": 0.7905759162303665
+        },
+        {
+          "threshold": 0.8167676767676767,
+          "value": 0.7905759162303665
+        },
+        {
+          "threshold": 0.8217171717171717,
+          "value": 0.7905759162303665
+        },
+        {
+          "threshold": 0.8266666666666667,
+          "value": 0.7905759162303665
+        },
+        {
+          "threshold": 0.8316161616161616,
+          "value": 0.7905759162303665
+        },
+        {
+          "threshold": 0.8365656565656565,
+          "value": 0.8080279232111692
+        },
+        {
+          "threshold": 0.8415151515151514,
+          "value": 0.8080279232111692
+        },
+        {
+          "threshold": 0.8464646464646465,
+          "value": 0.8080279232111692
+        },
+        {
+          "threshold": 0.8514141414141414,
+          "value": 0.8254799301919721
+        },
+        {
+          "threshold": 0.8563636363636363,
+          "value": 0.8254799301919721
+        },
+        {
+          "threshold": 0.8613131313131313,
+          "value": 0.8254799301919721
+        },
+        {
+          "threshold": 0.8662626262626262,
+          "value": 0.8254799301919721
+        },
+        {
+          "threshold": 0.8712121212121212,
+          "value": 0.8254799301919721
+        },
+        {
+          "threshold": 0.8761616161616161,
+          "value": 0.8254799301919721
+        },
+        {
+          "threshold": 0.8811111111111111,
+          "value": 0.8429319371727748
+        },
+        {
+          "threshold": 0.886060606060606,
+          "value": 0.8603839441535777
+        },
+        {
+          "threshold": 0.891010101010101,
+          "value": 0.8603839441535777
+        },
+        {
+          "threshold": 0.895959595959596,
+          "value": 0.8603839441535777
+        },
+        {
+          "threshold": 0.9009090909090909,
+          "value": 0.8778359511343804
+        },
+        {
+          "threshold": 0.9058585858585858,
+          "value": 0.8778359511343804
+        },
+        {
+          "threshold": 0.9108080808080807,
+          "value": 0.8952879581151832
+        },
+        {
+          "threshold": 0.9157575757575758,
+          "value": 0.8952879581151832
+        },
+        {
+          "threshold": 0.9207070707070707,
+          "value": 0.8952879581151832
+        },
+        {
+          "threshold": 0.9256565656565656,
+          "value": 0.8952879581151832
+        },
+        {
+          "threshold": 0.9306060606060605,
+          "value": 0.8952879581151832
+        },
+        {
+          "threshold": 0.9355555555555555,
+          "value": 0.9301919720767888
+        },
+        {
+          "threshold": 0.9405050505050505,
+          "value": 0.9301919720767888
+        },
+        {
+          "threshold": 0.9454545454545454,
+          "value": 0.9301919720767888
+        },
+        {
+          "threshold": 0.9504040404040404,
+          "value": 0.9825479930191972
+        },
+        {
+          "threshold": 0.9553535353535353,
+          "value": 0.9825479930191972
+        },
+        {
+          "threshold": 0.9603030303030302,
+          "value": 0.9825479930191972
+        },
+        {
+          "threshold": 0.9652525252525253,
+          "value": 0.9825479930191972
+        },
+        {
+          "threshold": 0.9702020202020202,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.9751515151515151,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.98010101010101,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.9850505050505051,
+          "value": 1.0
+        },
+        {
+          "threshold": 0.99,
+          "value": 1.0
+        }
+      ]
+    },
+    "curveDomain": {
+      "min": 0.0,
+      "max": 1.0
+    },
+    "figurePaths": {
+      "classBalance": "/figures/class_balance.png",
+      "costCurves": "/figures/threshold_cost_curves.png",
+      "rocCurves": "/figures/roc_curves.png",
+      "rfImportance": "/figures/rf_global_importance.png",
+      "confusionMatrices": "/figures/confusion_matrices.png"
+    }
+  },
+  "resultsTable": [
+    {
+      "Model": "Random Forest",
+      "Threshold": 0.04,
+      "Recall": 0.9264705882352942,
+      "Precision": 0.2625,
+      "F1": 0.4090909090909091,
+      "ROC-AUC": 0.9626796370722203,
+      "Missed failures": 5,
+      "False alarms": 177,
+      "Est. cost (\u00a3)": 6770
+    },
+    {
+      "Model": "TabNet",
+      "Threshold": 0.01,
+      "Recall": 0.9411764705882353,
+      "Precision": 0.10094637223974763,
+      "F1": 0.18233618233618235,
+      "ROC-AUC": 0.9274981731823163,
+      "Missed failures": 4,
+      "False alarms": 570,
+      "Est. cost (\u00a3)": 9700
+    },
+    {
+      "Model": "Logistic Regression",
+      "Threshold": 0.32,
+      "Recall": 0.9117647058823529,
+      "Precision": 0.09582689335394126,
+      "F1": 0.17342657342657342,
+      "ROC-AUC": 0.9056220314212643,
+      "Missed failures": 6,
+      "False alarms": 585,
+      "Est. cost (\u00a3)": 11850
+    }
+  ],
+  "top10Table": [
+    {
+      "Machine ID": "Asset_04661",
+      "Type": "L",
+      "Torque [Nm]": 48.1,
+      "Tool wear [min]": 32,
+      "Rotational speed [rpm]": 1350,
+      "Actual outcome": 1,
+      "RF probability": 0.8166666666666667,
+      "Risk level": "HIGH",
+      "Inspection flag": true,
+      "Recommendation": "Inspect before next shift"
+    },
+    {
+      "Machine ID": "Asset_01391",
+      "Type": "L",
+      "Torque [Nm]": 8.8,
+      "Tool wear [min]": 142,
+      "Rotational speed [rpm]": 2737,
+      "Actual outcome": 1,
+      "RF probability": 0.8033333333333333,
+      "Risk level": "HIGH",
+      "Inspection flag": true,
+      "Recommendation": "Inspect before next shift"
+    },
+    {
+      "Machine ID": "Asset_07997",
+      "Type": "M",
+      "Torque [Nm]": 9.7,
+      "Tool wear [min]": 143,
+      "Rotational speed [rpm]": 2710,
+      "Actual outcome": 1,
+      "RF probability": 0.7866666666666666,
+      "Risk level": "HIGH",
+      "Inspection flag": true,
+      "Recommendation": "Inspect before next shift"
+    },
+    {
+      "Machine ID": "Asset_04081",
+      "Type": "L",
+      "Torque [Nm]": 58.2,
+      "Tool wear [min]": 110,
+      "Rotational speed [rpm]": 1336,
+      "Actual outcome": 1,
+      "RF probability": 0.75,
+      "Risk level": "HIGH",
+      "Inspection flag": true,
+      "Recommendation": "Inspect before next shift"
+    },
+    {
+      "Machine ID": "Asset_04495",
+      "Type": "L",
+      "Torque [Nm]": 57.2,
+      "Tool wear [min]": 67,
+      "Rotational speed [rpm]": 1359,
+      "Actual outcome": 1,
+      "RF probability": 0.7366666666666667,
+      "Risk level": "HIGH",
+      "Inspection flag": true,
+      "Recommendation": "Inspect before next shift"
+    },
+    {
+      "Machine ID": "Asset_07011",
+      "Type": "L",
+      "Torque [Nm]": 12.2,
+      "Tool wear [min]": 17,
+      "Rotational speed [rpm]": 2633,
+      "Actual outcome": 1,
+      "RF probability": 0.73,
+      "Risk level": "HIGH",
+      "Inspection flag": true,
+      "Recommendation": "Inspect before next shift"
+    },
+    {
+      "Machine ID": "Asset_04270",
+      "Type": "L",
+      "Torque [Nm]": 52.0,
+      "Tool wear [min]": 154,
+      "Rotational speed [rpm]": 1331,
+      "Actual outcome": 1,
+      "RF probability": 0.7266666666666667,
+      "Risk level": "HIGH",
+      "Inspection flag": true,
+      "Recommendation": "Inspect before next shift"
+    },
+    {
+      "Machine ID": "Asset_04080",
+      "Type": "L",
+      "Torque [Nm]": 58.0,
+      "Tool wear [min]": 108,
+      "Rotational speed [rpm]": 1357,
+      "Actual outcome": 1,
+      "RF probability": 0.72,
+      "Risk level": "HIGH",
+      "Inspection flag": true,
+      "Recommendation": "Inspect before next shift"
+    },
+    {
+      "Machine ID": "Asset_06497",
+      "Type": "L",
+      "Torque [Nm]": 65.3,
+      "Tool wear [min]": 192,
+      "Rotational speed [rpm]": 1312,
+      "Actual outcome": 1,
+      "RF probability": 0.7066666666666667,
+      "Risk level": "HIGH",
+      "Inspection flag": true,
+      "Recommendation": "Inspect before next shift"
+    },
+    {
+      "Machine ID": "Asset_06078",
+      "Type": "L",
+      "Torque [Nm]": 59.1,
+      "Tool wear [min]": 203,
+      "Rotational speed [rpm]": 1339,
+      "Actual outcome": 1,
+      "RF probability": 0.7,
+      "Risk level": "HIGH",
+      "Inspection flag": true,
+      "Recommendation": "Inspect before next shift"
+    }
+  ]
+}
