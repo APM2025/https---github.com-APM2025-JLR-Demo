@@ -160,7 +160,16 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
 .prediction-box.medium .prob { color: var(--medium); }
 .prediction-pill { display: inline-block; margin-top: 8px; font: 700 12px/1 var(--mono); letter-spacing: 2px; }
 .prediction-note { color: #c7d5e2; margin-top: 16px; line-height: 1.4; }
+.scenario-groups { display: flex; flex-direction: column; gap: 14px; margin-top: 16px; }
+.scenario-group { background: #1a222c; border: 1px solid var(--line); padding: 12px; }
+.scenario-group-title { color: #dfe9f3; font: 700 12px/1.1 var(--mono); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
 .scenario-list { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+.scenario-group .scenario-list { margin-top: 0; }
+.scenario-btn.high { border-color: rgba(240, 104, 95, 0.45); }
+.scenario-btn.medium { border-color: rgba(244, 192, 86, 0.45); }
+.scenario-btn.low { border-color: rgba(103, 204, 176, 0.45); }
+.threshold-group { margin-top: 18px; }
+.threshold-note { color: #c7d5e2; margin-top: 12px; line-height: 1.45; font-size: 14px; }
 
 .how-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-bottom: 22px; }
 .metric-card { background: var(--panel); border: 1px solid var(--line); padding: 18px; }

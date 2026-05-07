@@ -4,6 +4,7 @@ const state = {
   machines: [],
   meta: null,
   how: null,
+  machineLabels: {},
 };
 
 // This is a tiny single-page app. We keep one in-memory state object, fetch all
@@ -53,6 +54,58 @@ function titleCase(key) {
   return key.replace(/([A-Z])/g, " $1").replace(/^./, (char) => char.toUpperCase()).trim();
 }
 
+function displayMachineName(machineId) {
+  return state.machineLabels[machineId] || machineId;
+}
+
+function explanationRowsHtml(items) {
+  return items.map((item) => {
+    const positive = item.contribution >= 0;
+    const width = Math.min(Math.abs(item.contribution) * 300, 100);
+    return `
+      <div class="explain-row">
+        <div>
+          <div class="explain-rule">${escapeHtml(item.feature_rule)}</div>
+          <div class="explain-sub">${escapeHtml(item.currentValueLabel || "Current value unavailable")}</div>
+        </div>
+        <div class="explain-bar"><div class="explain-fill ${positive ? "" : "negative"}" style="width:${width}%"></div></div>
+        <div class="explain-score ${positive ? "positive" : "negative"}">${positive ? "+" : ""}${item.contribution.toFixed(2)}</div>
+      </div>
+    `;
+  }).join("");
+}
+
+function thresholdExplanationHtml(result, thresholdInfo) {
+  const chosen = result.threshold;
+  const defaultThreshold = thresholdInfo.defaultThreshold;
+  const chosenDisplay = Number(chosen.toFixed(2));
+  const defaultDisplay = Number(defaultThreshold.toFixed(2));
+  const comparison = chosenDisplay < defaultDisplay
+    ? "lower than the notebook default"
+    : chosenDisplay > defaultDisplay
+      ? "higher than the notebook default"
+      : "the same as the notebook default";
+  const tradeoff = chosenDisplay < defaultDisplay
+    ? "This is a more sensitive setting: it catches more possible failures, but creates more false alarms."
+    : chosenDisplay > defaultDisplay
+      ? "This is a stricter setting: it reduces false alarms, but increases the chance of missing real failures."
+      : "This uses the notebook's cost-tuned operating point.";
+  const outcome = result.inspectionFlag
+    ? "At this threshold, the model would flag the machine for action."
+    : "At this threshold, the model would leave the machine unflagged.";
+  const assumptions = thresholdInfo.costAssumptions;
+  return `
+    <div class="threshold-note">
+      <strong>Default threshold logic:</strong> the notebook picked ${defaultThreshold.toFixed(2)} by minimizing estimated operating cost on the validation split.<br><br>
+      <strong>Cost assumptions:</strong> one missed failure is treated as about &pound;${assumptions.missedFailureGbp.toLocaleString()}, while one false alarm is treated as about &pound;${assumptions.falseAlarmGbp.toLocaleString()}. That is a ${assumptions.ratio}:1 penalty ratio in favour of catching failures.<br><br>
+      <strong>Validated model behaviour at the default threshold:</strong> recall ${probabilityPercent(thresholdInfo.recall)}, precision ${probabilityPercent(thresholdInfo.precision)}.${thresholdInfo.flaggedMachines ? ` The notebook export currently flags ${thresholdInfo.flaggedMachines} machines for review in the demo fleet.` : ""}<br><br>
+      <strong>Current threshold:</strong> ${chosen.toFixed(2)}. This is ${comparison} (${defaultThreshold.toFixed(2)}).<br><br>
+      ${tradeoff}<br><br>
+      ${outcome}
+    </div>
+  `;
+}
+
 function renderOverview() {
   // Overview is a pure render from the exported notebook payload: no extra computation here.
   const data = state.overview;
@@ -61,14 +114,10 @@ function renderOverview() {
     <tr>
       <td class="rank">${machine.rank}</td>
       <td>
-        <div class="machine-name">${machine.machineId}</div>
-        <div class="machine-meta">Type ${machine.type}</div>
+        <div class="machine-name">${displayMachineName(machine.machineId)}</div>
+        <div class="machine-meta">Grade ${machine.type}</div>
       </td>
-      <td class="machine-location">
-        <div>${machine.area}</div>
-        <div class="machine-meta">${machine.station}</div>
-      </td>
-      <td class="machine-summary">${machine.summary}</td>
+      <td class="machine-summary">${machine.recommendation}</td>
       <td class="risk-cell">
         <div class="risk-wrap">
           <div class="risk-bar"><div class="risk-fill ${riskClass(machine.risk)}" style="width:${machine.riskPercent}%"></div></div>
@@ -80,16 +129,16 @@ function renderOverview() {
   `).join("");
 
   el.innerHTML = `
-    <div class="eyebrow">${data.plant}</div>
-    <h1 class="page-title"><span style="background:#144fbe; padding: 0 2px;">${data.title}</span></h1>
-    <p class="page-subtitle">${data.subtitle}</p>
+    <div class="eyebrow">Notebook demo</div>
+    <h1 class="page-title"><span style="background:#144fbe; padding: 0 2px;">Predictive maintenance overview</span></h1>
+    <p class="page-subtitle">This page shows the current demo fleet, the machines that cross the chosen decision threshold, and which ones should be inspected first.</p>
     <div class="divider"></div>
 
     <div class="cards">
       <div class="card">
         <div class="label">Machines monitored</div>
         <div class="value">${data.summary.machinesMonitored}</div>
-        <div class="note">across 4 production lines</div>
+        <div class="note">machines in the notebook export</div>
       </div>
       <div class="card warning">
         <div class="label">Flagged today</div>
@@ -99,12 +148,12 @@ function renderOverview() {
       <div class="card danger">
         <div class="label">High risk</div>
         <div class="value">${data.summary.highRisk}</div>
-        <div class="note">inspect before next shift</div>
+        <div class="note">probability at or above 70%</div>
       </div>
       <div class="card">
-        <div class="label">Downtime avoided</div>
-        <div class="value">${data.summary.downtimeAvoidedHours} hr</div>
-        <div class="note">estimated, next 72 hours</div>
+        <div class="label">Default threshold</div>
+        <div class="value">${state.meta.threshold.toFixed(2)}</div>
+        <div class="note">validation-tuned operating point</div>
       </div>
     </div>
 
@@ -117,7 +166,7 @@ function renderOverview() {
       </div>
     </div>
 
-    <div class="hint-panel">Click any machine in <strong>Machine view</strong> to see why it was flagged. The model explains every prediction so engineers can sanity check it before acting.</div>
+    <div class="hint-panel">Click any machine in <strong>Machine view</strong> to inspect the sensor readings and local explanation behind the score.</div>
   `;
 }
 
@@ -126,9 +175,9 @@ function renderMachineList() {
   const rows = state.machines.map((machine) => `
     <tr class="machine-row" data-machine-id="${machine.machineId}">
       <td>
-        <div class="machine-name">${machine.machineId}</div>
+        <div class="machine-name">${displayMachineName(machine.machineId)}</div>
       </td>
-      <td class="machine-location">${machine.station}</td>
+      <td class="machine-location">Grade ${machine.type}</td>
       <td class="risk-cell">
         <div class="risk-wrap">
           <div class="risk-bar"><div class="risk-fill ${riskClass(machine.risk)}" style="width:${Math.round(machine.probability * 100)}%"></div></div>
@@ -174,29 +223,17 @@ function renderMachineDetail(detail) {
   // LIME explanations are already prepared by the export step; the frontend just
   // formats them and maps contribution sign to colour/direction.
   const riskClassName = riskClass(detail.risk);
-  const explanationRows = detail.lime.map((item) => {
-    const positive = item.contribution >= 0;
-    const width = Math.min(Math.abs(item.contribution) * 300, 100);
-    return `
-      <div class="explain-row">
-        <div>
-          <div class="explain-rule">${escapeHtml(item.feature_rule)}</div>
-          <div class="explain-sub">${escapeHtml(item.currentValueLabel || "Current value unavailable")}</div>
-        </div>
-        <div class="explain-bar"><div class="explain-fill ${positive ? "" : "negative"}" style="width:${width}%"></div></div>
-        <div class="explain-score ${positive ? "positive" : "negative"}">${positive ? "+" : ""}${item.contribution.toFixed(2)}</div>
-      </div>
-    `;
-  }).join("");
+  const explanationRows = explanationRowsHtml(detail.lime);
 
   const el = document.getElementById("machine-detail");
   el.innerHTML = `
     <button class="back-btn" id="detail-back">&lt; Back</button>
-    <div class="eyebrow">${detail.area} &bull; ${detail.station}</div>
+    <div class="eyebrow">Flagged machine profile</div>
     <div class="detail-header">
-      <h1 class="page-title" style="margin-bottom:0;">${detail.machineId}</h1>
+      <h1 class="page-title" style="margin-bottom:0;">${displayMachineName(detail.machineId)}</h1>
       <div class="detail-risk ${riskClassName}">&bull; ${detail.risk}</div>
     </div>
+    <p class="page-subtitle">Grade ${detail.type}. This is a generic demo label rather than a real plant asset name or location.</p>
     <div class="divider"></div>
 
     <div class="detail-grid">
@@ -250,13 +287,26 @@ function renderTryIt() {
   // gathered client-side and posted back to the live prediction endpoint.
   const meta = state.meta;
   const defaults = meta.featureDefaults;
-  const scenarios = meta.scenarios;
+  const scenarioGroups = meta.scenarioGroups || {};
+  const scenarioGroupsHtml = Object.entries(scenarioGroups).map(([type, profiles]) => `
+    <div class="scenario-group">
+      <div class="scenario-group-title">Type ${escapeHtml(type)}</div>
+      <div class="scenario-list">
+        ${profiles.map((profile, index) => `
+          <button class="scenario-btn ${riskClass(profile.risk)}" data-scenario-type="${escapeHtml(type)}" data-scenario-index="${index}">
+            ${escapeHtml(profile.label)} · ${Math.round(profile.probability * 100)}%
+          </button>
+        `).join("")}
+      </div>
+    </div>
+  `).join("");
 
   const el = document.getElementById("try-it");
   el.innerHTML = `
     <div class="eyebrow">Try it</div>
     <h1 class="page-title">Move the sliders, get a prediction</h1>
     <p class="page-subtitle">Pretend you are reading sensors from a machine. Move the values around and watch the prediction change.</p>
+    <p class="page-subtitle" style="max-width:none;">These profiles are taken from real model-scored examples. Each machine grade has a healthy, medium-risk, and high-risk starting point.</p>
     <div class="divider"></div>
 
     <div class="try-grid">
@@ -288,15 +338,48 @@ function renderTryIt() {
             <div class="prediction-note">Calculating prediction...</div>
           </div>
           <div class="prediction-mini-label" style="margin-top:18px;">Try a scenario</div>
-          <div class="scenario-list">
-            ${Object.keys(scenarios).map(name => `<button class="scenario-btn" data-scenario="${name}">${name}</button>`).join("")}
+          <div class="scenario-groups">${scenarioGroupsHtml}</div>
+
+          <div class="input-group threshold-group">
+            <div class="input-row">
+              <div class="input-label">Decision threshold</div>
+              <div class="input-value"><span id="Decision-threshold-value">${meta.threshold.toFixed(2)}</span></div>
+            </div>
+            <input type="range" id="Decision-threshold" min="0.01" max="0.99" step="0.01" value="${meta.threshold}">
+            <div id="threshold-explanation" class="threshold-note">
+              The notebook chose the default threshold by balancing missed-failure cost against false-alarm cost.
+            </div>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-panel">
+      <div class="section-header">Why did the model say that?</div>
+      <div class="section-body">
+        <p class="explain-text">The live explanation below updates with the sliders. Red bars push toward failure, green bars push toward healthy.</p>
+        <div id="try-explanation" class="explain-list">
+          <div class="explain-sub">Waiting for prediction...</div>
         </div>
       </div>
     </div>
   `;
 
   bindTryIt(meta);
+}
+
+function applyTryItScenario(preset) {
+  document.getElementById("Torque--Nm-").value = preset["Torque [Nm]"];
+  document.getElementById("Tool-wear--min-").value = preset["Tool wear [min]"];
+  document.getElementById("Rotational-speed--rpm-").value = preset["Rotational speed [rpm]"];
+  document.getElementById("Process-temperature--K-").value = preset["Process temperature [K]"];
+  document.getElementById("Air-temperature--K-").value = preset["Air temperature [K]"];
+  document.getElementById("Torque--Nm--value").textContent = preset["Torque [Nm]"];
+  document.getElementById("Tool-wear--min--value").textContent = preset["Tool wear [min]"];
+  document.getElementById("Rotational-speed--rpm--value").textContent = preset["Rotational speed [rpm]"];
+  document.getElementById("Process-temperature--K--value").textContent = preset["Process temperature [K]"];
+  document.getElementById("Air-temperature--K--value").textContent = preset["Air temperature [K]"];
+  document.querySelectorAll(".grade-btn").forEach((btn) => btn.classList.toggle("is-active", btn.dataset.type === preset["Type"]));
 }
 
 function slider(name, value, min, max, step, unit) {
@@ -324,11 +407,14 @@ function collectTryItPayload() {
     "Rotational speed [rpm]": parseFloat(document.getElementById("Rotational-speed--rpm-").value),
     "Process temperature [K]": parseFloat(document.getElementById("Process-temperature--K-").value),
     "Air temperature [K]": parseFloat(document.getElementById("Air-temperature--K-").value),
+    "threshold": parseFloat(document.getElementById("Decision-threshold").value),
   };
 }
 
 async function updateTryItPrediction() {
   const box = document.getElementById("try-prediction");
+  const explain = document.getElementById("try-explanation");
+  const thresholdExplain = document.getElementById("threshold-explanation");
   try {
     // This is the one place the SPA asks the backend to run the model live.
     const result = await api("/api/predict", {
@@ -344,6 +430,10 @@ async function updateTryItPrediction() {
       <div class="prediction-pill ${riskClassName}">&bull; ${result.risk}</div>
       <div class="prediction-note">Threshold is ${result.threshold.toFixed(2)}. ${result.inspectionFlag ? "This prediction is above it, so the model would flag it." : "This prediction is below it, so the model would leave it alone."}<br><br>${result.recommendation}</div>
     `;
+    explain.innerHTML = result.lime && result.lime.length
+      ? explanationRowsHtml(result.lime)
+      : `<div class="explain-sub">Explanation unavailable for this prediction.</div>`;
+    thresholdExplain.innerHTML = thresholdExplanationHtml(result, state.meta.thresholdInfo);
   } catch (error) {
     box.className = "prediction-box medium";
     box.innerHTML = `
@@ -352,6 +442,8 @@ async function updateTryItPrediction() {
       <div class="prediction-pill medium">Request failed</div>
       <div class="prediction-note">${escapeHtml(error.message || "Prediction could not be calculated.")}</div>
     `;
+    explain.innerHTML = `<div class="explain-sub">${escapeHtml(error.message || "Explanation could not be calculated.")}</div>`;
+    thresholdExplain.innerHTML = `<div class="explain-sub">${escapeHtml(error.message || "Threshold explanation unavailable.")}</div>`;
   }
 }
 
@@ -364,6 +456,12 @@ function bindTryIt(meta) {
       updateTryItPrediction();
     });
   });
+  const thresholdInput = document.getElementById("Decision-threshold");
+  const thresholdLabel = document.getElementById("Decision-threshold-value");
+  thresholdInput.addEventListener("input", () => {
+    thresholdLabel.textContent = Number.parseFloat(thresholdInput.value).toFixed(2);
+    updateTryItPrediction();
+  });
   document.querySelectorAll(".grade-btn").forEach((button) => {
     button.addEventListener("click", () => {
       document.querySelectorAll(".grade-btn").forEach((btn) => btn.classList.remove("is-active"));
@@ -373,20 +471,12 @@ function bindTryIt(meta) {
   });
   document.querySelectorAll(".scenario-btn").forEach((button) => {
     button.addEventListener("click", () => {
-      const preset = meta.scenarios[button.dataset.scenario];
+      const group = meta.scenarioGroups[button.dataset.scenarioType] || [];
+      const preset = group[Number.parseInt(button.dataset.scenarioIndex, 10)]?.values;
+      if (!preset) return;
       document.querySelectorAll(".scenario-btn").forEach((btn) => btn.classList.remove("is-active"));
       button.classList.add("is-active");
-      document.getElementById("Torque--Nm-").value = preset["Torque [Nm]"];
-      document.getElementById("Tool-wear--min-").value = preset["Tool wear [min]"];
-      document.getElementById("Rotational-speed--rpm-").value = preset["Rotational speed [rpm]"];
-      document.getElementById("Process-temperature--K-").value = preset["Process temperature [K]"];
-      document.getElementById("Air-temperature--K-").value = preset["Air temperature [K]"];
-      document.getElementById("Torque--Nm--value").textContent = preset["Torque [Nm]"];
-      document.getElementById("Tool-wear--min--value").textContent = preset["Tool wear [min]"];
-      document.getElementById("Rotational-speed--rpm--value").textContent = preset["Rotational speed [rpm]"];
-      document.getElementById("Process-temperature--K--value").textContent = preset["Process temperature [K]"];
-      document.getElementById("Air-temperature--K--value").textContent = preset["Air temperature [K]"];
-      document.querySelectorAll(".grade-btn").forEach((btn) => btn.classList.toggle("is-active", btn.dataset.type === preset["Type"]));
+      applyTryItScenario(preset);
       updateTryItPrediction();
     });
   });
@@ -541,6 +631,9 @@ async function bootstrap() {
   state.machines = machines.machines;
   state.meta = meta;
   state.how = how;
+  state.machineLabels = Object.fromEntries(
+    state.machines.map((machine, index) => [machine.machineId, `Machine ${String(index + 1).padStart(2, "0")}`]),
+  );
 
   renderOverview();
   renderMachineList();
